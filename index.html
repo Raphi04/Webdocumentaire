@@ -15,10 +15,10 @@
 
 
                     <section id="introduction_1" class="window">
-                        <img src="ressources/main/Fichier 10.png" alt="La graine de l'éveil">
+                        <img src="ressources/main/Fichier 14-8.png" alt="La graine de l'éveil">
                         <div>
-                            <p>Tout le monde bois du café, mais personne ne connait son histoire ou sa création.</p>
-                            <p>Les torréfacteurs de la Brulerie de Meaux nous ont éclairé sur le sujet et nous on fait découvrir un nouveau monde ...</p>
+                            <p>Tout le monde boit du café, mais personne ne connaît son histoire.</p>
+                            <p>Les experts en torréfaction de la Brûlerie de Meaux nous ont éclairés sur le sujet, découvrez un nouveau monde riche en sensations à travers leurs histoires ...</p>
                         </div>
                         <div onClick="changeWindow('introduction_2')">COMMENCER</div>
                     </section>
@@ -31,8 +31,12 @@
 
                 </section>
                 <section id="navigation">
+                    <div onClick="changeWindow('introduction_1')">
+                        <p>Introduction</p>
+                    </div>
+                    <hr>
                     <div onClick="changeWindow()">
-                        <p>Bar</p>
+                        <p>Ruelle</p>
                     </div>
                     <hr>
                     <div onClick="changeWindow()">
@@ -40,16 +44,18 @@
                     </div>
                     <hr>
                     <div onClick="changeWindow()">
-                        <p>Ruelle</p>
-                    </div>
-                    <hr>
-                    <div onClick="changeWindow('introduction_1')">
-                        <p>Introduction</p>
+                        <p>Bar</p>
                     </div>
                 </section>
             </section>
             <div id="goDownContainer">
-                <img onClick="goDown" src="ressources/main/flèche sombre.png">
+                <div>
+                    <img onClick="goDown" src="ressources/main/flèche sombre.png">
+                </div>
+                <div>
+                    <a target="new_blank" href="https://www.facebook.com/Brulerie.Meaux/?locale=fr_FR"><img src="ressources/main/facebook_invisible.png"></a>
+                    <a target="new_blank" href="https://www.brulerie-meaux.fr/"><img src="ressources/main/internet_invisible.png"></a>
+                </div>
             </div>
 
             <img id="feuille" src="ressources/main/feuille.png">
@@ -57,7 +63,7 @@
         </section>
         
         <section id="secondContent">
-            <script>addHTML("secondContent", "Jérémie.html")</script>
+            <script>addHTML("secondContent", "Jeremie.html")</script>
         </section>
     </body>
 </html>
