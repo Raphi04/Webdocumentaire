@@ -131,7 +131,39 @@ p{
     border-bottom: 4px solid #1F1D19;
 }
 
-#goDownContainer img {
+#goDownContainer > div:nth-child(1){
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#goDownContainer > div > img {
     height: 60%;
     width: 15%;
+    margin-left: calc(15.8%);
+}
+
+#goDownContainer > div {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-right: 20px;
+    height: 100%;
+    width: 20%;
+}
+
+#goDownContainer > div > a {
+    display: flex;
+    justify-content: center;
+    width: 20%;
+}
+
+#goDownContainer > div > a > img {
+    width: 75%;
+    transition-property: transform;
+    transition-duration: 0.3s;
+}
+
+#goDownContainer > div > a > img:hover {
+    transform: scale(1.1);
 }

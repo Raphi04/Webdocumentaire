@@ -31,8 +31,12 @@
 
                 </section>
                 <section id="navigation">
+                    <div onClick="changeWindow('introduction_1')">
+                        <p>Introduction</p>
+                    </div>
+                    <hr>
                     <div onClick="changeWindow()">
-                        <p>Bar</p>
+                        <p>Ruelle</p>
                     </div>
                     <hr>
                     <div onClick="changeWindow()">
@@ -40,16 +44,18 @@
                     </div>
                     <hr>
                     <div onClick="changeWindow()">
-                        <p>Ruelle</p>
-                    </div>
-                    <hr>
-                    <div onClick="changeWindow('introduction_1')">
-                        <p>Introduction</p>
+                        <p>Bar</p>
                     </div>
                 </section>
             </section>
             <div id="goDownContainer">
-                <img onClick="goDown" src="ressources/main/flèche sombre.png">
+                <div>
+                    <img onClick="goDown" src="ressources/main/flèche sombre.png">
+                </div>
+                <div>
+                    <a target="new_blank" href="https://www.facebook.com/Brulerie.Meaux/?locale=fr_FR"><img src="ressources/main/facebook_invisible.png"></a>
+                    <a target="new_blank" href="https://www.brulerie-meaux.fr/"><img src="ressources/main/internet_invisible.png"></a>
+                </div>
             </div>
 
             <img id="feuille" src="ressources/main/feuille.png">
@@ -57,7 +63,7 @@
         </section>
         
         <section id="secondContent">
-            <script>addHTML("secondContent", "Jérémie.html")</script>
+            <script>addHTML("secondContent", "Jeremie.html")</script>
         </section>
     </body>
 </html>
