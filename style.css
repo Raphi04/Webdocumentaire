@@ -1,4 +1,6 @@
 @import url(styles/interactif/introduction_1.css);
+@import url(styles/interactif/introduction_2.css);
+@import url(styles/interactif/introduction_3.css);
 @import url(styles/secondContent.css);
 
 @font-face {
@@ -129,6 +131,7 @@ p{
     background-image: url("ressources/main/boisClair.png");
     background-size: cover;
     border-bottom: 4px solid #1F1D19;
+    position: relative;
 }
 
 #goDownContainer > div:nth-child(1){
@@ -138,9 +141,12 @@ p{
     align-items: center;
 }
 #goDownContainer > div > img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     height: 60%;
     width: 15%;
-    margin-left: calc(15.8%);
 }
 
 #goDownContainer > div {

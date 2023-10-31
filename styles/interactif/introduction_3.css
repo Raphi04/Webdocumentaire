@@ -1,0 +1,101 @@
+#introduction_3 {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#introduction_3 h2 {
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 97px;
+    margin: 0;
+}
+
+#introduction_3 > div:nth-child(2) {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#introduction_3 > div:nth-child(2) > div{
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items:  center;
+}
+
+#introduction_3 > div:nth-child(2) > div > p {
+    text-align: center;
+    margin: 15px 0px;
+    font-size: 20px;
+}
+
+#introduction_3 > div:nth-child(2) > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35%;
+    transition-property: transform;
+    transition-duration: 0.3s;
+}
+
+#introduction_3 > div:nth-child(2) > a:hover {
+    transform: scale(1.05);
+}
+
+#introduction_3 > div:nth-child(2) > a > img{
+    border-radius: 10px;
+    border: 5px solid #FFEECF;
+    width: 100%;
+}
+
+#introduction_3 > div:nth-child(3) {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    width: 70%;
+}
+
+#introduction_3 .skip {
+    border-radius: 30px;
+    line-height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 45px;
+    border: 2px solid #FFEECF;
+    font-size: 20px;
+    transition-property: transform;
+    transition-duration: 0.3s;
+}
+
+#introduction_3 .skip:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+#introduction_3 .next {
+    line-height: 45px;
+    margin-left: 15px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 45px;
+    color: #1F1D19;
+    background-color: #FFEECF;
+    border: 2px solid #FFEECF;
+    transition-property: transform;
+    transition-duration: 0.3s;
+    font-size: 20px;
+}
+
+#introduction_3 .next:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
