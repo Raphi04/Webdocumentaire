@@ -9,18 +9,19 @@
         <script src="Jeremie.js"></script>
     </head>
     <body>
+        <audio id="music" src = "ressources/main/backgroundMusic.mp3" hidden></audio>
         <section id="main">
             <section id="mainContainer">
                 <section id="interactif">
-
+                    <img id="sound" src="ressources/main/soundOff.png" onClick="musicStatement()">
 
                     <section id="introduction_1" class="window">
-                        <img src="ressources/main/Fichier 14-8.png" alt="La graine de l'éveil">
+                        <img src="ressources/main/titre.png" alt="La graine de l'éveil">
                         <div>
                             <p>Tout le monde boit du café, mais personne ne connaît son histoire.</p>
                             <p>Les experts en torréfaction de la Brûlerie de Meaux nous ont éclairés sur le sujet, découvrez un nouveau monde riche en sensations à travers leurs histoires ...</p>
                         </div>
-                        <div onClick="changeWindow('introduction_2')">COMMENCER</div>
+                        <div onClick="changeWindow('introduction_2'), playMusic()">COMMENCER</div>
                     </section>
 
 
@@ -32,7 +33,7 @@
                             <p>En France, <strong>sept personnes sur dix</strong> consomment en moyenne 3,4 kilogrammes de café soit <strong>environ 500 tasses par an</strong>.</p>
                         </div>
                         <div>
-                            <div onClick="changeWindow()" class="skip">PASSER L'INTRODUCTION</div>
+                            <div onClick="changeWindow('ruelle')" class="skip">PASSER L'INTRODUCTION</div>
                             <div onClick="changeWindow('introduction_3')"class="next">SUIVANT</div>
                         </div>
                     </section>
@@ -48,11 +49,14 @@
                             <a href="https://www.google.com/maps/place/LA+BR%C3%9BLERIE+DE+MEAUX/@48.9552791,2.8782442,16.56z/data=!4m6!3m5!1s0x47e8a103ed000403:0xd63454f0c45ff1f6!8m2!3d48.9557817!4d2.8792296!16s%2Fg%2F1tg2cttk?entry=ttu" target="_blank"><img src="ressources/introduction/map.png"></a>
                         </div>
                         <div>
-                            <div onClick="changeWindow()" class="skip">PASSER L'INTRODUCTION</div>
-                            <div onClick="changeWindow('introduction_3')"class="next">SUIVANT</div>
+                            <div onClick="changeWindow('ruelle')" class="skip">PASSER L'INTRODUCTION</div>
+                            <div onClick="changeWindow('ruelle')"class="next">SUIVANT</div>
                         </div>
                     </section>
 
+                    <section id="ruelle" class="window windowDisable">
+
+                    </section>
 
                 </section>
                 <section id="navigation">
@@ -60,22 +64,22 @@
                         <p>Introduction</p>
                     </div>
                     <hr>
-                    <div onClick="changeWindow()">
+                    <div onClick="changeWindow('ruelle')">
                         <p>Ruelle</p>
                     </div>
                     <hr>
-                    <div onClick="changeWindow()">
+                    <div onClick="changeWindow('boutique')">
                         <p>Boutique</p>
                     </div>
                     <hr>
-                    <div onClick="changeWindow()">
+                    <div onClick="changeWindow('bar')">
                         <p>Bar</p>
                     </div>
                 </section>
             </section>
             <div id="goDownContainer">
                 <div>
-                    <img onClick="goDown" src="ressources/main/flèche sombre.png">
+                    <img id = "arrow" onClick="goDown" src="ressources/main/flèche sombre.png">
                 </div>
                 <div>
                     <a target="new_blank" href="https://www.facebook.com/Brulerie.Meaux/?locale=fr_FR"><img src="ressources/main/facebook_invisible.png"></a>

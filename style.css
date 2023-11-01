@@ -1,6 +1,9 @@
 @import url(styles/interactif/introduction_1.css);
 @import url(styles/interactif/introduction_2.css);
 @import url(styles/interactif/introduction_3.css);
+
+@import url(styles/interactif/ruelle.css);
+
 @import url(styles/secondContent.css);
 
 @font-face {
@@ -82,6 +85,7 @@ p{
     width: 75%;
     height: 85%;
     background-color: #1F1D19;
+    position: relative;
 }
 
 .windowDisable {
@@ -122,6 +126,20 @@ p{
     background-color: #141210;
 } 
 
+#sound {
+    position: absolute;
+    bottom: 0;
+    right: -5%;
+    width: 40px;
+    transition-property: transform;
+    transition-duration: 0.3s;
+}
+
+#sound:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
 #goDownContainer {
     display: flex;
     justify-content: center;
@@ -140,6 +158,7 @@ p{
     justify-content: center;
     align-items: center;
 }
+
 #goDownContainer > div > img {
     position: absolute;
     top: 50%;
@@ -147,6 +166,8 @@ p{
     transform: translate(-50%,-50%);
     height: 60%;
     width: 15%;
+    transition-property: transform;
+    transition-duration: 0.3s;
 }
 
 #goDownContainer > div {
