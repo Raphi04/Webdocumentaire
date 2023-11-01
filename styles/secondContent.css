@@ -3,3 +3,39 @@
     height: 400px;
     background-size: cover;
 }
+
+/* Image Scroller */
+
+.scrollerSection {
+    position: relative;
+}
+
+.imgScroller {
+    width: 640px;
+    height: 360px;
+    margin: auto;
+    overflow: auto;
+    display: flex;
+}
+
+.imgInScroll {
+    width: 640px;
+    height: 360px;
+}
+
+.ball {
+    background-color: grey;
+    border-radius: 100%;
+    width: 15px;
+    height: 15px;
+    margin: 10px;
+}
+
+.ballBox {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    display: flex; 
+}

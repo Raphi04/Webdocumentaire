@@ -1,5 +1,5 @@
 function addHTML(divID, documentHTML) {
-    document.getElementById(divID).innerHTML = `<object type="text/html" data="${documentHTML}"></object>`;
+    document.getElementById(divID).innerHTML = `<object type="text/html" data="${documentHTML}" width="100%" height="3000px"></object>`;
 }
 
 
