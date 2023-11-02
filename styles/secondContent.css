@@ -1,34 +1,33 @@
 #secondContent {
     background-image: url("../ressources/main/boisClair.png");
-    height: 400px;
+    height: 600px;
     background-size: cover;
+}
+
+* {
+    scroll-behavior: smooth;
 }
 
 /* Image Scroller */
 
 .scrollerSection {
     position: relative;
+    width: 1080px;
+    margin: auto;
 }
 
 .imgScroller {
     width: 640px;
     height: 360px;
     margin: auto;
-    overflow: auto;
+    overflow: hidden;
     display: flex;
+    position: relative;
 }
 
 .imgInScroll {
-    width: 640px;
     height: 360px;
-}
-
-.ball {
-    background-color: grey;
-    border-radius: 100%;
-    width: 15px;
-    height: 15px;
-    margin: 10px;
+    width: 640px;
 }
 
 .ballBox {
@@ -38,4 +37,37 @@
     transform: translate(-50%, -50%);
     z-index: 100;
     display: flex; 
+}
+
+.ball {
+    background-color: rgba(128, 128, 128, 0.719);
+    border-radius: 100%;
+    width: 15px;
+    height: 15px;
+    margin: 10px;
+}
+
+.currentBall {
+    background-color: rgb(63, 63, 63) !important;
+    width: 25px !important;
+    height: 25px !important;
+}
+
+.arrow {
+    position: absolute;
+    z-index: 100;
+    top: 50%;
+    transform: translate(0, -50%);
+    background-color: red;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+}
+
+#arrowLeft {
+    left: 150px;
+}
+
+#arrowRight {
+    right: 150px;
 }

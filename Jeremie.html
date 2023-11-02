@@ -3,16 +3,17 @@
 <script src="Jeremie.js"></script>
 
 
-<section class="scrollerSection">
-    <div class="imgScroller">
+<section id="scrollerSection1" class="scrollerSection" value="1" maxValue="3">
+    <div class="imgScroller" id="Scroller1">
         <img class="imgInScroll" id="img1" src="ressources/main/teste1.jpg" alt="">
         <img class="imgInScroll" id="img2" src="ressources/main/teste2.jpg" alt="">
         <img class="imgInScroll" id="img3" src="ressources/main/teste3.jpg" alt="">
     </div>
     <div class="ballBox">
-        <a href="#img1"><div class="ball" id="ball1"></div></a>
-        <a href="#img2"><div class="ball" id="ball2"></div></a>
-        <a href="#img3"><div class="ball" id="ball3"></div></a>
+        <div id="ball1" class="ball  currentBall" onclick="ballScroll('N1', 1)"></div>
+        <div id="ball2" class="ball" onclick="ballScroll('N1', 2)"></div>
+        <div id="ball3" class="ball" onclick="ballScroll('N1', 3)"></div>
     </div>
-
+    <div class="arrow" id="arrowLeft" onclick="arrowScroll('N1', 'left')"></div>
+    <div class="arrow" id="arrowRight" onclick="arrowScroll('N1', 'right')"></div>
 </section>
