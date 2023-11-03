@@ -2,7 +2,9 @@
 @import url(styles/interactif/introduction_2.css);
 @import url(styles/interactif/introduction_3.css);
 
+@import url(styles/interactif/interaction.css);
 @import url(styles/interactif/ruelle.css);
+@import url(styles/interactif/boutique.css);
 
 @import url(styles/secondContent.css);
 

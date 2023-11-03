@@ -1,7 +1,90 @@
 #ruelle {
     width: 100%;
     height: 100%;
-    background-image: url("../../ressources/ruelle/brulerie.jpg");
+    background-image: url("../../ressources/ruelle/test.jpg");
     background-size: 100% 100%;
+    position: relative;
+}
 
+#laurier {
+    width: 143px;
+    left: 42.2%;
+    bottom: 19%;
+}
+
+#porte {
+    width: 96px;
+    left: 55%;
+    bottom: 45%;
+}
+
+#laurierPopUp {
+    z-index: 1;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(31, 29, 25, 47%);
+}
+
+#laurierPopUp > div{
+    color: #1F1D19;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 63%;
+    height: 80%;
+    background-color: white;
+    border-radius: 30px;
+    position: relative;
+}
+
+#laurierPopUp > div > img {
+    width: 20px;
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    cursor: pointer;
+}
+
+#laurierPopUp > div > div {
+    max-height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+#laurierPopUp > div > div > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+}
+
+#laurierPopUp > div > div > a > img {
+    border-radius: 100%;
+    width: 70%;
+    border: 4px solid #1F1D19;
+}
+
+#laurierPopUp > div > div > div{
+    padding-right: 45px;
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+}
+
+#laurierPopUp > div > div > div > p {
+    margin: 20px 0px;
+    font-size: 15px;
+    line-height: 24px;
+}
+
+#laurierPopUp > div > div > div > p:nth-child(1) {
+    margin-top: 0px;
 }

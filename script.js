@@ -32,3 +32,14 @@ function musicStatement() {
         musicState = "off";
     }
 }
+
+
+
+function popUpDisplay(div, state) {
+    popUp = document.getElementById(div);
+    if (state == "open") {
+        popUp.style.display = "flex";
+    } else {
+        popUp.style.display = "none";
+    }
+}
