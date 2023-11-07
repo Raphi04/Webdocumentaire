@@ -2,18 +2,126 @@
 <link href="styles/secondContent.css" rel="stylesheet" type="text/css" media="all">
 <script src="Jeremie.js"></script>
 
-
-<section id="scrollerSection1" class="scrollerSection" value="1" maxValue="3">
-    <div class="imgScroller" id="Scroller1">
-        <img class="imgInScroll" id="img1" src="ressources/main/teste1.jpg" alt="">
-        <img class="imgInScroll" id="img2" src="ressources/main/teste2.jpg" alt="">
-        <img class="imgInScroll" id="img3" src="ressources/main/teste3.jpg" alt="">
+<!-- Scroller d'image -->
+<section id="scrollerSection1" class="scrollerSection" value="1" maxValue="6">
+    <div class="flexRow fVerticalCenter">
+        <div class="velourBackground"><img class="arrow" id="arrowLeft" src="ressources/main/flèche.png" alt="" onclick="arrowScroll('N1', 'left')"></div>
+        <div class="imgScroller" id="Scroller1">
+            <span class="scrollerBox">
+                <img class="imgInScroll" id="img1" src="ressources/main/testeCafe.jpg" alt="">
+                <div class="txtInScroll"> Worem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. </div>
+            </span>
+            <span class="scrollerBox">
+                <img class="imgInScroll" id="img2" src="ressources/main/testeHauteur.jpg" alt="">
+                <div class="txtInScroll"> Image haute (bord noir) </div>
+            </span>
+            <span class="scrollerBox">
+                <img class="imgInScroll" id="img3" src="ressources/main/teste3.jpg" alt="">
+                <div class="txtInScroll hidden"> Texte caché </div>
+            </span>
+            <span class="scrollerBox">
+                <img class="imgInScroll" id="img4" src="ressources/main/testeCarre.jpg" alt="">
+                <div class="txtInScroll"> Image carré </div>
+            </span>
+            <span class="scrollerBox">
+                <img class="imgInScroll" id="img5" src="ressources/main/testeLong.jpg" alt="">
+                <div class="txtInScroll"> Image longue en 32x9 (si image trop longue, se fait couper)</div>
+            </span>
+            <span class="scrollerBox">
+                <img class="imgInScroll" id="img6" src="ressources/main/internet_invisible.png" alt="">
+                <div class="txtInScroll"> Texte super long : Worem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Worem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Worem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus..</div>
+            </span>
+        </div>
+        <div class="velourBackground"><img class="arrow" id="arrowRight" src="ressources/main/flèche.png" alt="" onclick="arrowScroll('N1', 'right')"></div>
     </div>
+
+    <!-- Image Ball -->
     <div class="ballBox">
         <div id="ball1" class="ball  currentBall" onclick="ballScroll('N1', 1)"></div>
         <div id="ball2" class="ball" onclick="ballScroll('N1', 2)"></div>
         <div id="ball3" class="ball" onclick="ballScroll('N1', 3)"></div>
+        <div id="ball4" class="ball" onclick="ballScroll('N1', 4)"></div>
+        <div id="ball5" class="ball" onclick="ballScroll('N1', 5)"></div>
+        <div id="ball6" class="ball" onclick="ballScroll('N1', 6)"></div>
     </div>
-    <div class="arrow" id="arrowLeft" onclick="arrowScroll('N1', 'left')"></div>
-    <div class="arrow" id="arrowRight" onclick="arrowScroll('N1', 'right')"></div>
 </section>
+
+
+
+
+
+
+
+
+
+
+<div class="moreInfo">
+    PLUS D’INFORMATIONS <br> SUR LE CAFÉ
+</div>
+<!-- Articles -->
+<section id="articleSection">
+    <!-- Les Articles -->
+    <div id="articleLine1" class="flexRow articleLine">
+        <div class="article">
+            <div onclick="appear(1)">cliquer</div>
+        </div>
+
+
+
+        <div class="article">
+            <div onclick="appear(2)">cliquer</div>
+        </div>
+    </div>
+
+
+
+    <div class="flexRow articleLine">
+        <div class="article">
+
+        </div>
+
+
+
+        <div class="article">
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- Détails des articles -->
+    <div class="articleDetails" id="articleDetails1">
+        <a class="croix" onclick="appear(1)"><img src="ressources/main/croix.png"  class="icroix"></a>
+        bijour 1
+    </div>
+
+    <div class="articleDetails" id="articleDetails2">
+        <a class="croix" onclick="appear(2)"><img src="ressources/main/croix.png"  class="icroix"></a>
+        bijour 2
+    </div>
+
+
+    
+</section>
+
+
+
+
+
+
+<footer class="flexRow footerTxtSize fSpaceBetween">
+    <div class="auteur">
+        <b class='footerSubTitle'>Auteur :</b><br>
+        <b> Jérémie : </b> jeremie.parant@edu.univ-eiffel.fr <br>
+        <b> Morgane : </b> morgane.le-normand@edu.univ-eiffel.fr <br>
+        <b> Hugo : </b> hugo.nom@edu.univ-eiffel.fr <br>
+        <b> Raphäel : </b> raphäel.nom@edu.univ-eiffel.fr
+    </div>
+    <div class="footerImgBox">
+        <img class="footerImg" src="ressources/main/Fichier 14-8.png" alt="">
+    </div>
+    <div class="realise">Réalisé le xx/11/2023</div>
+</footer>

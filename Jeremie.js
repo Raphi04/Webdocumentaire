@@ -22,7 +22,7 @@ function arrowScroll(scrollerNumber, direction) {
             newImg = maxImg;
         }
         newImgName = imgName + newImg;
-        document.getElementById(newImgName).scrollIntoView({block: "nearest", inline: "nearest"});
+        document.getElementById(newImgName).scrollIntoView({block: "nearest", inline: "center"});
         scrollerSection.setAttribute("value", newImg)
     }
     else if (direction == "right") {
@@ -31,7 +31,7 @@ function arrowScroll(scrollerNumber, direction) {
             newImg = 1;
         }
         newImgName = imgName + newImg;
-        document.getElementById(newImgName).scrollIntoView({block: "nearest", inline: "nearest"});
+        document.getElementById(newImgName).scrollIntoView({block: "nearest", inline: "center"});
         scrollerSection.setAttribute("value", newImg)
     }
     currentBall(ballName, currentImg, newImg);
@@ -51,7 +51,7 @@ function ballScroll(scrollerNumber, imageNumber) {
     currentImg = Number(scrollerSection.getAttribute("value"));
     // Scroll to img and set current img value
     newImgName = imgName + imageNumber;
-    document.getElementById(newImgName).scrollIntoView({block: "nearest", inline: "nearest"});
+    document.getElementById(newImgName).scrollIntoView({block: "nearest", inline: "center"});
     scrollerSection.setAttribute("value", imageNumber);
     currentBall(ballName, currentImg, imageNumber);
 }
@@ -71,6 +71,10 @@ function currentBall(ballName, oldBallNumber, newBallNumber) {
 
 
 
-
-
 // Autre fonctions ...
+function appear(nombre) {
+    elementID = "articleDetails" + nombre;
+    document.getElementById(elementID).classList.toggle('appear');
+    document.getElementById("articleSection").scrollIntoView({block: "start"});
+    document.getElementById("body").classList.toggle('body');
+}
