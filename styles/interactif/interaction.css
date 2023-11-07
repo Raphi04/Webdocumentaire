@@ -30,7 +30,7 @@
     padding: 0px 20px 2px 20px;
     box-shadow: 0px 0px 70px 0px rgba(86, 86, 86, 50%);
     position: relative;
-    transition: visibility 0s, opacity 0.7s;
+    transition: visibility 0s, opacity 0.5s;
 }
 
 .containerWithArrowDown::after{
