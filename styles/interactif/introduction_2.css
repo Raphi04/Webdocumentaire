@@ -1,4 +1,7 @@
 #introduction_2 {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 2s cubic-bezier(.68,.99,.73,1.03);
     height: 100%;
     width: 100%;
     display: flex;

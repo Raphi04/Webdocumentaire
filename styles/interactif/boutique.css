@@ -1,7 +1,16 @@
 #boutique {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 1.5s cubic-bezier(.68,.99,.73,1.03);
     width: 100%;
     height: 100%;
-    background-image: url("../../ressources/boutique/boutique.jpg");
+    background-image: url("../../ressources/interactif/boutique/boutique.jpg");
     background-size: 100% 100%;
     position: relative;
+}
+
+#couloir{
+    position: absolute;
+    top: 38%;
+    left: 47%;
 }

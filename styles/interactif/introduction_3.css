@@ -1,4 +1,7 @@
 #introduction_3 {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 2s cubic-bezier(.68,.99,.73,1.03);
     height: 100%;
     width: 100%;
     display: flex;
@@ -55,7 +58,7 @@
 }
 
 #introduction_3 > div:nth-child(3) {
-    margin-top: 20px;
+    margin-top: 17px;
     display: flex;
     justify-content: center;
     width: 70%;

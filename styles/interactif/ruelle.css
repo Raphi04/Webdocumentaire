@@ -1,21 +1,24 @@
 #ruelle {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 1.5s cubic-bezier(.68,.99,.73,1.03);
     width: 100%;
     height: 100%;
-    background-image: url("../../ressources/ruelle/test.jpg");
+    background-image: url("../../ressources/interactif/ruelle/brulerie.jpg");
     background-size: 100% 100%;
     position: relative;
 }
 
 #laurier {
     width: 143px;
-    left: 42.2%;
-    bottom: 19%;
+    left: 59.5%;
+    bottom: 57%;
 }
 
 #porte {
     width: 96px;
-    left: 55%;
-    bottom: 45%;
+    left: 42.7%;
+    bottom: 50%;
 }
 
 #laurierPopUp {

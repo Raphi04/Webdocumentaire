@@ -1,10 +1,12 @@
 @import url(styles/interactif/introduction_1.css);
 @import url(styles/interactif/introduction_2.css);
 @import url(styles/interactif/introduction_3.css);
+@import url(styles/interactif/introduction_4.css);
 
 @import url(styles/interactif/interaction.css);
 @import url(styles/interactif/ruelle.css);
 @import url(styles/interactif/boutique.css);
+@import url(styles/interactif/sousSol.css);
 @import url(styles/interactif/bar.css);
 
 @import url(styles/secondContent.css);
@@ -62,6 +64,8 @@ p{
 }
 
 #sacCafé {
+    z-index: 2;
+    width: 13% !important;
     bottom: 4px;
     left: 0px;
 }
@@ -97,7 +101,7 @@ p{
 
 #navigation {
     width: 10%;
-    height: 40%;
+    height: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -121,6 +125,11 @@ p{
     align-items: center;
     transition-property: background-color, font-size;
     transition-duration: 0.3s;
+}
+
+.selected {
+    background-color: #141210;
+    font-size: 18px;
 }
 
 #navigation div:hover {
@@ -167,10 +176,16 @@ p{
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    height: 60%;
-    width: 15%;
-    transition-property: transform;
+    height: 30%;
+    width: 5%;
+    transition-property: transform, width, height;
     transition-duration: 0.3s;
+}
+
+#goDownContainer > div > img:hover {
+    cursor: pointer;
+    width: 6%;
+    height: 30.5%;
 }
 
 #goDownContainer > div {
@@ -182,18 +197,7 @@ p{
     width: 20%;
 }
 
-#goDownContainer > div > a {
-    display: flex;
-    justify-content: center;
-    width: 20%;
-}
-
-#goDownContainer > div > a > img {
-    width: 75%;
-    transition-property: transform;
-    transition-duration: 0.3s;
-}
-
-#goDownContainer > div > a > img:hover {
-    transform: scale(1.1);
+.smoothTransition {
+    visibility: visible !important;
+    opacity: 1 !important;
 }

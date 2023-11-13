@@ -5,8 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>La graine de l'éveil - Webdocumentaire sur la Brulerie de Meaux</title>
         <link href="style.css" rel="stylesheet" type="text/css" media="all">
-        <script src="script.js"></script>
-        <script src="Jeremie.js"></script>
     </head>
     <body>
         <audio id="music" src = "ressources/main/backgroundMusic.mp3" hidden></audio>
@@ -19,7 +17,7 @@
                         <img src="ressources/main/titre.png" alt="La graine de l'éveil">
                         <div>
                             <p>Tout le monde boit du café, mais personne ne connaît son histoire.</p>
-                            <p>Les experts en torréfaction de la Brûlerie de Meaux nous ont éclairés sur le sujet, découvrez un nouveau monde riche en sensations à travers leurs histoires ...</p>
+                            <p>Les experts en torréfaction de la Brûlerie de Meaux nous ont éclairés sur le sujet, découvrez un nouveau monde riche en sensations à travers leurs histoires...</p>
                         </div>
                         <div onClick="changeWindow('introduction_2'), playMusic()">COMMENCER</div>
                     </section>
@@ -28,12 +26,12 @@
                     <section id="introduction_2" class="window windowDisable">
                         <h2>Quelques données chiffrées</h2>
                         <div>
-                            <p>Les plus grands producteurs de café en tonnes par an sont : le <strong>Brésil</strong>(2 681), le <strong>Vietnam</strong>(1 542) et la <strong>Colombie</strong>(754).</p>
-                            <p>Avec plus de <strong>2,5 milliards de tasses</strong> bu par jour, le café est la <strong>deuxième boisson la plus consommée</strong> au monde juste après l’eau.</p>
-                            <p>En France, <strong>sept personnes sur dix</strong> consomment en moyenne 3,4 kilogrammes de café soit <strong>environ 500 tasses par an</strong>.</p>
+                            <p>Les plus grands producteurs de&nbsp;café en&nbsp;tonnes par&nbsp;an sont : le&nbsp;<strong>Brésil</strong>&nbsp;(2681), le&nbsp;<strong>Vietnam</strong>&nbsp;(1542) et&nbsp;la&nbsp;<strong>Colombie</strong>&nbsp;(754).</p>
+                            <p>Avec plus de <strong>2,5 milliards de tasses</strong> bues par jour, le café est la <strong>deuxième boisson la&nbsp;plus consommée</strong> au monde juste après l’eau.</p>
+                            <p>En France, <strong>sept personnes sur dix</strong> consomment en moyenne 3,4&nbsp;kilogrammes de&nbsp;café  par an, soit <strong>environ 500 tasses</strong>.</p>
                         </div>
                         <div>
-                            <div onClick="changeWindow('ruelle')" class="skip">PASSER L'INTRODUCTION</div>
+                            <div onClick="changeWindow('introduction_4')" class="skip">PASSER L'INTRODUCTION</div>
                             <div onClick="changeWindow('introduction_3')"class="next">SUIVANT</div>
                         </div>
                     </section>
@@ -49,23 +47,35 @@
                             <a href="https://www.google.com/maps/place/LA+BR%C3%9BLERIE+DE+MEAUX/@48.9552791,2.8782442,16.56z/data=!4m6!3m5!1s0x47e8a103ed000403:0xd63454f0c45ff1f6!8m2!3d48.9557817!4d2.8792296!16s%2Fg%2F1tg2cttk?entry=ttu" target="_blank"><img src="ressources/introduction/map.png"></a>
                         </div>
                         <div>
-                            <div onClick="changeWindow('ruelle')" class="skip">PASSER L'INTRODUCTION</div>
-                            <div onClick="changeWindow('ruelle')"class="next">SUIVANT</div>
+                            <div onClick="changeWindow('introduction_4')" class="skip">PASSER L'INTRODUCTION</div>
+                            <div onClick="changeWindow('introduction_4')"class="next">SUIVANT</div>
                         </div>
+                    </section>
+
+                    <section id="introduction_4" class="window windowDisable">
+                        <video onEnded="videoEnd('videoPresentationButtonContainer')" id="videoPresentation" width="100%" height="100%" controls>
+                            <source src="ressources/interactif/bar/P15.MOV" type="video/mp4">
+                        </video>
+
+                        <div id="videoPresentationButtonContainer">
+                            <div onClick="restartVideo('videoPresentation', 'videoPresentationButtonContainer')" class="presentationVideoButton">Recommencer la vidéo</div>
+                            <div onClick="changeWindow('ruelle')" class="presentationVideoButton">Continuer</div>
+                        </div>
+
                     </section>
 
                     <section id="ruelle" class="window windowDisable">
 
                         <div id="laurier" class="interaction" onClick="popUpDisplay('laurierPopUp', 'open')">
-                            <div id="laurierHover" class="containerWithArrowDown">Laurier rose</div>
-                            <img  src="ressources/ruelle/recherche.png">
+                            <div class="containerWithArrowDown">Laurier rose</div>
+                            <img  src="ressources/interactif/rechercheB3.png">
                         </div>
                         <div id="laurierPopUp">
                             <div>
                                 <img onClick="popUpDisplay('laurierPopUp', 'close')" src="ressources/main/cross.png">
                                 <h2>LE LAURIER ROSE</h2>
                                 <div>
-                                    <a href="https://fr.wikipedia.org/wiki/Laurier-rose" target="_blank"><img src="ressources/ruelle/laurier.jpg"></a>
+                                    <a href="https://fr.wikipedia.org/wiki/Laurier-rose" target="_blank"><img src="ressources/interactif/ruelle/laurier.jpg"></a>
                                     <div>
                                         <p>Sorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                         <p>Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
@@ -76,24 +86,34 @@
                         </div>
 
                         <div id="porte" class="interaction" onClick="changeWindow('boutique')">
-                            <div id="porteHover" class="containerWithArrowDown">Entrer</div>
-                            <img  src="ressources/ruelle/boussole.png">
+                            <div class="containerWithArrowDown">Entrer</div>
+                            <img  src="ressources/interactif/boussoleB3.png">
                         </div>
 
                     </section>
 
                     <section id="boutique" class="window windowDisable">
+
+                        <div id="couloir" class="interaction" onClick="changeWindow('sousSol')">
+                            <div class="containerWithArrowDown">Sous-Sol</div>
+                            <img  src="ressources/interactif/boussoleB3.png">
+                        </div>
                         
                     </section>
                     
                     <section id="bar" class="window windowDisable">
-                        <video id="video1" width="100%" height="100%" controls loop autoplay>
+                        <video id="video1" width="100%" height="100%" controls loop autoplay hidden>
                             <source src="ressources/bar/P15.MOV" type="video/mp4">
                         </video>
                     </section>
+
+                    <section id="sousSol" class="window windowDisable">
+                        </video>
+                    </section>
+
                 </section>
                 <section id="navigation">
-                    <div onClick="changeWindow('introduction_1')">
+                    <div onClick="changeWindow('introduction_1')" class="selected">
                         <p>Introduction</p>
                     </div>
                     <hr>
@@ -105,6 +125,10 @@
                         <p>Boutique</p>
                     </div>
                     <hr>
+                    <div onClick="changeWindow('sousSol')">
+                        <p>Sous-sol</p>
+                    </div>
+                    <hr>
                     <div onClick="changeWindow('bar')">
                         <p>Bar</p>
                     </div>
@@ -112,19 +136,17 @@
             </section>
             <div id="goDownContainer">
                 <div>
-                    <img id = "arrow" onClick="goDown" src="ressources/main/flèche sombre.png">
-                </div>
-                <div>
-                    <a target="new_blank" href="https://www.facebook.com/Brulerie.Meaux/?locale=fr_FR"><img src="ressources/main/facebook_invisible.png"></a>
-                    <a target="new_blank" href="https://www.brulerie-meaux.fr/"><img src="ressources/main/internet_invisible.png"></a>
+                    <img onClick ="document.getElementById('scrollerSection1').scrollIntoView({behavior : 'smooth', block : 'center'})" id="arrow" onClick="goDown" src="ressources/main/flèche sombre.png">
                 </div>
             </div>
 
             <img id="feuille" src="ressources/main/feuille.png">
             <img id="sacCafé" src="ressources/main/sac de café.png">
         </section>
-        
+
         <section id="secondContent">
+            <script src="script.js"></script>
+            <script src="Jeremie.js"></script>
             <script>addHTML("secondContent", "Jeremie.html")</script>
         </section>
     </body>
