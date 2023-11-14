@@ -71,10 +71,42 @@ function currentBall(ballName, oldBallNumber, newBallNumber) {
 
 
 
-// Autre fonctions ...
+
+
+// Apparition des articles
 function appear(nombre) {
     elementID = "articleDetails" + nombre;
+
+    var allDetails = document.querySelectorAll(".articleDetails");
+    allDetails.forEach(function(Detail) {
+        Detail.classList.remove('appear');
+        Detail.classList.remove('appearInstant');
+    });
+
     document.getElementById(elementID).classList.toggle('appear');
-    document.getElementById("articleSection").scrollIntoView({block: "start"});
+    document.getElementById(elementID).scrollIntoView({block: "center"});
+    document.getElementById("body").classList.toggle('body');
+}
+
+function appearInstant(nombre) {
+    elementID = "articleDetails" + nombre;
+
+    var allDetails = document.querySelectorAll(".articleDetails");
+    allDetails.forEach(function(Detail) {
+        Detail.classList.remove('appear');
+        Detail.classList.remove('appearInstant');
+    });
+
+    document.getElementById(elementID).classList.toggle('appearInstant');
+    document.getElementById(elementID).scrollIntoView({block: "center"});
+    document.getElementById("body").classList.toggle('body');
+}
+
+function remove(nombre) {
+    elementID = "articleDetails" + nombre;
+
+    document.getElementById(elementID).classList.remove('appear');
+    document.getElementById(elementID).classList.remove('appearInstant');
+    document.getElementById("articleDetails1").scrollIntoView({block: "center"});
     document.getElementById("body").classList.toggle('body');
 }

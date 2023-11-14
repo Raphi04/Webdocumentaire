@@ -20,8 +20,9 @@
 }
 
 .imgScroller {
-    width: 40%;
-    height: 300px;
+    min-width: 800px;
+    max-width: 800px;
+    height: 450px;
     margin: auto;
     overflow: hidden;
     display: flex;
@@ -39,7 +40,7 @@
 
 .imgInScroll {
     min-height: 100%;
-    max-width: 100%;
+    min-width: 100%;
     max-height: 100%;
     object-fit: cover;
 }
@@ -76,10 +77,15 @@
 .ball {
     border: 3px solid #1F1D19;
     border-radius: 100%;
-    width: 7px;
-    height: 7px;
-    margin-left: 28px;
-    margin-right: 28px;
+    width: 6px;
+    height: 6px;
+    margin-left: 20px;
+    margin-right: 20px;
+    transition-duration: 200ms;
+}
+
+.ball:hover {
+    scale: 1.25;
 }
 
 .currentBall {
@@ -91,7 +97,11 @@
     height: 27px;
     width: 133px;
     top: 50%;
+    transition-duration: 200ms;
+}
 
+.arrow:hover {
+    scale: 1.15;
 }
 
 #arrowLeft {
@@ -107,7 +117,7 @@
 .velourBackground {
     background-color: #470404;
     height: 180px;
-    min-width: 30%;
+    width: 30%;
     max-width: 100%;
     position: relative;
 }
@@ -128,53 +138,159 @@
     padding-bottom: 30px;
 }
 
+.moreInfo1Line {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+}
+
 #articleSection {
     display: flex;
     flex-direction: column;
     background-image: url("../ressources/main/boisClair.png");
     background-size: cover;
     position: relative;
-    padding: 55px;
+    padding: 55px 0 55px 0;
 }
 
 .articleLine {
     justify-content: center;
+    position: relative;
 }
 
 #articleLine1 {
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 
 .article {
     width: 400px;
     height: 250px;
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-left: 35px;
+    margin-right: 35px;
     background-color: white;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 5px solid #1F1D19;
+    z-index: 1;
+}
+
+.articleImage {
+    min-height: 100%;
+    max-height: 100%;
+    min-width: 100%;
+    transition-duration: 600ms;
+}
+
+.article:hover > .articleImage {
+    scale: 1.3;
+}
+
+
+
+.txtInArticle {
+    font-size: 16px !important;
+    line-height: 20px !important;
+    padding: 10px !important;
+}
+
+.velourBackground2 {
+    background-color: #470404;
+    height: 90px;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
 }
 
     /* Articles détails*/
     .articleDetails{
         position: absolute;
-        width: 800px;
-        min-height: 300px;
-        padding: 20px 10px 80px 10px;
-        border: 2px solid black;
-        overflow-y: scroll;
-        overflow-x: hidden;
+        width: 900px;
+        height: 560px;
+        padding: 10px;
+        border-radius: 30px;
+        overflow: hidden;
         left: 50%;
         top: 28%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -25%);
         background-color: white;
         visibility: hidden;
         opacity: 0%;
+        z-index: 100;
+    }
+    .subArticleDetails {
+        position: relative;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        height: 90%;
+        margin-top: 20px;
+    }
+
+    .articleDetailsTitle {
+        font-size: 25px;
+        font-weight: 600;
+        line-height: 1;
+        margin-bottom: 10px;
+    }
+    .articleDetailsHeader {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.1;
+    }
+    .articleDetailsTxt {
+        font-size: 14px;
+        line-height: 1.1;
+    }
+    .txtCenter {
+        text-align: center;
+        padding: 0 100px 0 100px;
+    }
+
+    .articleDetailsVideo {
+        display: block;
+        margin: 0 auto;
+        width: 700px;
+        border: 10px solid #1F1D19;
+        margin-top: 25px;
+        margin-bottom: 50px;
+    }
+
+    .otherArticle {
+        margin-top: 35px;
+        margin-bottom: 35px;
+    }
+
+    .otherArticle > .article{
+        width: 200px;
+        height: 125px;
+        margin: 0 10px 0 10px;
+    }
+    .otherArticle > .article > .txtInArticle {
+        font-size: 10px !important;
+        padding: 5px !important;
+    }
+
+    .closeBtn {
+        margin: auto;
+        width: fit-content;
+        padding: 0 35px 0 35px;
+        margin-bottom: 10px;
+        border-radius: 20px;
+        background-color: #470404;
+        color: white;
+        transition-duration: 300ms;
+    }
+
+    .closeBtn:hover {
+        scale: 1.1;
     }
 
     .croix{
         position: sticky;
         padding: 10px 10px 0 0;
         top: 0;
-        float: right;
+        display: -webkit-box;
+        margin-left: auto;
         width: 20px;
         height: 20px;
     }
@@ -183,10 +299,19 @@
         width: 20px;
     }
 
+    .croix:hover {
+        scale: 1.1;
+    }
+
     .appear {
         visibility: visible !important;
         opacity: 100% !important;
         transition: 700ms linear;
+    }
+
+    .appearInstant {
+        visibility: visible !important;
+        opacity: 100% !important;
     }
 
     .body {
@@ -198,6 +323,34 @@
 
 
 
+
+/* Gallery */
+.gallery {
+    background-image: url("../ressources/main/boisClair.png");
+    padding: 40px 0 40px 0;
+}
+
+.galleryColumn {
+    margin: 0 20px 0 20px;
+    width: 300px;
+    position: relative;
+    justify-content: center;
+}
+
+.g16-9 {
+    width: 304px;
+    height: 171px;
+    margin: 20px 0 20px 0;
+}
+
+.g9-16 {
+    width: 304px;
+    height: 382px;
+    object-fit: cover;
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
 
 /* Footer */
 footer {
@@ -213,7 +366,7 @@ footer {
 }
 
 .footerImg {
-    height: 90px;
+    height: 100px;
 }
 
 .footerImgBox {
@@ -242,6 +395,11 @@ right: 20px;
     flex-direction: row;
 }
 
+.flexColumn {
+    display: flex;
+    flex-direction: column;
+}
+
 .fVerticalCenter {
     align-items: center;
 }
@@ -249,6 +407,12 @@ right: 20px;
 .fSpaceBetween {
     justify-content: space-between;
 }
+
+.fCenter {
+    justify-content: center;
+}
+
+
 
 /* texte */
 .footerTxtSize {
@@ -258,22 +422,33 @@ right: 20px;
 
 
 
+
+
 /* Responsive */
-@media screen and (min-width: 1600px) {
-    /* Image Slider */
-    .imgScroller {
-        height: 350px;
-    }
-}
 
 @media screen and (min-width: 1920px) {
-    /* Image Slider */
+    /* Image Scroller */
     .imgScroller {
-        height: 450px;
+        min-width: 1120px;
+        max-width: 1120px;
+        height: 630px;
     }
     .txtInScroll {
-        font-size: 18px;
-        line-height: 24px;
+        font-size: 20px;
+        line-height: 25px;
+    }
+    .ball {
+        width: 7px;
+        height: 7px;
+        margin-left: 28px;
+        margin-right: 28px;
+    }
+    .arrow {
+        height: 38px;
+        width: 186px;
+    }
+    .velourBackground {
+        height: 252px;
     }
 
 
@@ -284,9 +459,24 @@ right: 20px;
         line-height: 70px;
     }
     .article {
-        width: 500px;
-        height: 330px;
+        width: 560px;
+        height: 350px;
+        margin-right: 49px;
+        margin-left: 49px;
     }
+    #articleLine1 {
+        margin-bottom: 70px;
+    }
+
+    .txtInArticle {
+        font-size: 22px !important;
+        line-height: 26px !important;
+        padding: 14px !important;
+    }
+        /* Article Details */
+        .velourBackground2 {
+            height: 126px;
+        }
 
 
 
@@ -296,15 +486,15 @@ right: 20px;
         line-height: 20px;
     }
     .footerImg {
-        height: 150px;
+        height: 140px;
     }
     footer {
-        padding: 40px;
+        padding: 35px;
     }
     .realise {
         position: absolute;
-        bottom: 40px;
-        right: 40px;
+        bottom: 35px;
+        right: 35px;
     }
     
 }

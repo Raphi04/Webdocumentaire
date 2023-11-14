@@ -3,33 +3,29 @@
 <script src="Jeremie.js"></script>
 
 <!-- Scroller d'image -->
-<section id="scrollerSection1" class="scrollerSection" value="1" maxValue="6">
+<section id="scrollerSection1" class="scrollerSection" value="1" maxValue="5">
     <div class="flexRow fVerticalCenter">
         <div class="velourBackground"><img class="arrow" id="arrowLeft" src="ressources/main/flèche.png" alt="" onclick="arrowScroll('N1', 'left')"></div>
         <div class="imgScroller" id="Scroller1">
             <span class="scrollerBox">
-                <img class="imgInScroll" id="img1" src="ressources/main/testeCafe.jpg" alt="">
-                <div class="txtInScroll"> Worem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. </div>
+                <img class="imgInScroll" id="img1" src="ressources/slider/fruit.jpg" alt="">
+                <div class="txtInScroll"> Worem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus.Worem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus.Worem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. </div>
             </span>
             <span class="scrollerBox">
-                <img class="imgInScroll" id="img2" src="ressources/main/testeHauteur.jpg" alt="">
-                <div class="txtInScroll"> Image haute (bord noir) </div>
+                <img class="imgInScroll" id="img2" src="ressources/slider/graine.jpg" alt="">
+                <div class="txtInScroll"> Worem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus.Worem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. </div>
             </span>
             <span class="scrollerBox">
-                <img class="imgInScroll" id="img3" src="ressources/main/teste3.jpg" alt="">
-                <div class="txtInScroll hidden"> Texte caché </div>
+                <img class="imgInScroll" id="img3" src="ressources/slider/torrifie.jpg" alt="">
+                <div class="txtInScroll"> Worem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, di </div>
             </span>
             <span class="scrollerBox">
                 <img class="imgInScroll" id="img4" src="ressources/main/testeCarre.jpg" alt="">
-                <div class="txtInScroll"> Image carré </div>
+                <div class="txtInScroll"> Worem ipsum dolor sit amet, consectetur adip. </div>
             </span>
             <span class="scrollerBox">
-                <img class="imgInScroll" id="img5" src="ressources/main/testeLong.jpg" alt="">
+                <img class="imgInScroll" id="img5" src="ressources/slider/cafe.jpg" alt="">
                 <div class="txtInScroll"> Image longue en 32x9 (si image trop longue, se fait couper)</div>
-            </span>
-            <span class="scrollerBox">
-                <img class="imgInScroll" id="img6" src="ressources/main/internet_invisible.png" alt="">
-                <div class="txtInScroll"> Texte super long : Worem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Worem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Worem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus..</div>
             </span>
         </div>
         <div class="velourBackground"><img class="arrow" id="arrowRight" src="ressources/main/flèche.png" alt="" onclick="arrowScroll('N1', 'right')"></div>
@@ -42,7 +38,6 @@
         <div id="ball3" class="ball" onclick="ballScroll('N1', 3)"></div>
         <div id="ball4" class="ball" onclick="ballScroll('N1', 4)"></div>
         <div id="ball5" class="ball" onclick="ballScroll('N1', 5)"></div>
-        <div id="ball6" class="ball" onclick="ballScroll('N1', 6)"></div>
     </div>
 </section>
 
@@ -55,38 +50,37 @@
 
 
 
+<!-- Articles -->
 <div class="moreInfo">
     PLUS D’INFORMATIONS <br> SUR LE CAFÉ
 </div>
-<!-- Articles -->
 <section id="articleSection">
     <!-- Les Articles -->
     <div id="articleLine1" class="flexRow articleLine">
-        <div class="article">
-            <div onclick="appear(1)">cliquer</div>
+        <div id="article1" class="article" onclick="appear(1)">
+            <img id="articleImage1" class="articleImage" src="ressources/main/testeCafe.jpg" alt="">
+            <div class="txtInScroll txtInArticle">Article 1</div>
         </div>
 
-
-
-        <div class="article">
-            <div onclick="appear(2)">cliquer</div>
+        <div id="article2" class="article" onclick="appear(2)">
+            <img id="articleImage2" class="articleImage" src="ressources/main/teste1.jpg" alt="">
+            <div class="txtInScroll txtInArticle">Article 2</div>
         </div>
+        <div class="velourBackground2"></div>
     </div>
 
-
-
-    <div class="flexRow articleLine">
-        <div class="article">
-
+    <div id="articleLine2" class="flexRow articleLine">
+        <div id="article3" class="article" onclick="appear(3)">
+            <img id="articleImage3" class="articleImage" src="ressources/main/teste2.jpg" alt="">
+            <div class="txtInScroll txtInArticle">Article 3</div>
         </div>
 
-
-
-        <div class="article">
-
+        <div id="article4" class="article" onclick="appear(4)">
+            <img id="articleImage4" class="articleImage" src="ressources/main/teste3.jpg" alt="">
+            <div class="txtInScroll txtInArticle">Article 4</div>
         </div>
+        <div class="velourBackground2"></div>
     </div>
-
 
 
 
@@ -94,17 +88,124 @@
 
     <!-- Détails des articles -->
     <div class="articleDetails" id="articleDetails1">
-        <a class="croix" onclick="appear(1)"><img src="ressources/main/croix.png"  class="icroix"></a>
-        bijour 1
+        <a class="croix" onclick="remove(1)"><img src="ressources/main/cross.png"  class="icroix"></a>
+        <div class="subArticleDetails"> 
+            <div class="articleDetailsTitle txtCenter"> TITRE DE L’ARTICLE</div>
+            <div class="articleDetailsHeader txtCenter"> Qorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</div>
+            <video controls class="articleDetailsVideo" src="ressources/bar/P15.MOV"></video>
+            <div class="articleDetailsTxt txtCenter">
+                Norem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. <br><br>
+                Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in elementum tellus. <br><br>
+                Curabitur tempor quis eros tempus lacinia. Nam bibendum pellentesque quam a convallis. Sed ut vulputate nisi. Integer in felis sed leo vestibulum venenatis. Suspendisse quis arcu sem. Aenean feugiat ex eu vestibulum vestibulum. Morbi a eleifend magna. Nam metus lacus, porttitor eu mauris a, blandit ultrices nibh. Mauris sit amet magna non ligula vestibulum eleifend. Nulla varius volutpat turpis sed lacinia. Nam <br><br>
+                eget mi in purus lobortis eleifend. Sed nec ante dictum sem condimentum ullamcorper quis venenatis nisi. Proin vitae facilisis nisi, ac posuere leo.
+            </div>
+            <div class="flexRow fCenter otherArticle">
+                <div class="article" onclick="appearInstant(2)">
+                    <img class="articleImage" src="ressources/main/teste1.jpg" alt="">
+                    <div class="txtInScroll txtInArticle">Article 2</div>
+                </div>
+                <div class="article" onclick="appearInstant(3)">
+                    <img class="articleImage" src="ressources/main/teste2.jpg" alt="">
+                    <div class="txtInScroll txtInArticle">Article 3</div>
+                </div>
+                <div class="article" onclick="appearInstant(4)">
+                    <img class="articleImage" src="ressources/main/teste3.jpg" alt="">
+                    <div class="txtInScroll txtInArticle">Article 4</div>
+                </div>
+            </div>
+            <div class="closeBtn" onclick="remove(1)"> Fermer </div>
+        </div>
     </div>
 
     <div class="articleDetails" id="articleDetails2">
-        <a class="croix" onclick="appear(2)"><img src="ressources/main/croix.png"  class="icroix"></a>
-        bijour 2
+        <a class="croix" onclick="remove(2)"><img src="ressources/main/cross.png"  class="icroix"></a>
+        <div class="subArticleDetails"> 
+            <div class="articleDetailsTitle txtCenter"> TITRE DE L’ARTICLE 2</div>
+            <div class="articleDetailsHeader txtCenter"> Qorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</div>
+            <video controls class="articleDetailsVideo" src="ressources/bar/P15.MOV"></video>
+            <div class="articleDetailsTxt txtCenter">
+                Norem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. <br><br>
+                Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in elementum tellus. <br><br>
+                Curabitur tempor quis eros tempus lacinia. Nam bibendum pellentesque quam a convallis. Sed ut vulputate nisi. Integer in felis sed leo vestibulum venenatis. Suspendisse quis arcu sem. Aenean feugiat ex eu vestibulum vestibulum. Morbi a eleifend magna. Nam metus lacus, porttitor eu mauris a, blandit ultrices nibh. Mauris sit amet magna non ligula vestibulum eleifend. Nulla varius volutpat turpis sed lacinia. Nam <br><br>
+                eget mi in purus lobortis eleifend. Sed nec ante dictum sem condimentum ullamcorper quis venenatis nisi. Proin vitae facilisis nisi, ac posuere leo.
+            </div>
+            <div class="flexRow fCenter otherArticle">
+                <div class="article" onclick="appearInstant(1)">
+                    <img class="articleImage" src="ressources/main/testeCafe.jpg" alt="">
+                    <div class="txtInScroll txtInArticle">Article 1</div>
+                </div>
+                <div class="article" onclick="appearInstant(3)">
+                    <img class="articleImage" src="ressources/main/teste2.jpg" alt="">
+                    <div class="txtInScroll txtInArticle">Article 3</div>
+                </div>
+                <div class="article" onclick="appearInstant(4)">
+                    <img class="articleImage" src="ressources/main/teste3.jpg" alt="">
+                    <div class="txtInScroll txtInArticle">Article 4</div>
+                </div>
+            </div>
+            <div class="closeBtn" onclick="remove(2)"> Fermer </div>
+        </div>
     </div>
 
+    <div class="articleDetails" id="articleDetails3">
+        <a class="croix" onclick="remove(3)"><img src="ressources/main/cross.png"  class="icroix"></a>
+        <div class="subArticleDetails"> 
+            <div class="articleDetailsTitle txtCenter"> TITRE DE L’ARTICLE 3</div>
+            <div class="articleDetailsHeader txtCenter"> Qorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</div>
+            <video controls class="articleDetailsVideo" src="ressources/bar/P15.MOV"></video>
+            <div class="articleDetailsTxt txtCenter">
+                Norem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. <br><br>
+                Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in elementum tellus. <br><br>
+                Curabitur tempor quis eros tempus lacinia. Nam bibendum pellentesque quam a convallis. Sed ut vulputate nisi. Integer in felis sed leo vestibulum venenatis. Suspendisse quis arcu sem. Aenean feugiat ex eu vestibulum vestibulum. Morbi a eleifend magna. Nam metus lacus, porttitor eu mauris a, blandit ultrices nibh. Mauris sit amet magna non ligula vestibulum eleifend. Nulla varius volutpat turpis sed lacinia. Nam <br><br>
+                eget mi in purus lobortis eleifend. Sed nec ante dictum sem condimentum ullamcorper quis venenatis nisi. Proin vitae facilisis nisi, ac posuere leo.
+            </div>
+            <div class="flexRow fCenter otherArticle">
+                <div class="article" onclick="appearInstant(1)">
+                    <img class="articleImage" src="ressources/main/testeCafe.jpg" alt="">
+                    <div class="txtInScroll txtInArticle">Article 1</div>
+                </div>
+                <div class="article" onclick="appearInstant(2)">
+                    <img class="articleImage" src="ressources/main/teste1.jpg" alt="">
+                    <div class="txtInScroll txtInArticle">Article 2</div>
+                </div>
+                <div class="article" onclick="appearInstant(4)">
+                    <img class="articleImage" src="ressources/main/teste3.jpg" alt="">
+                    <div class="txtInScroll txtInArticle">Article 4</div>
+                </div>
+            </div>
+            <div class="closeBtn" onclick="remove(3)"> Fermer </div>
+        </div>
+    </div>
 
-    
+    <div class="articleDetails" id="articleDetails4">
+        <a class="croix" onclick="remove(4)"><img src="ressources/main/cross.png"  class="icroix"></a>
+        <div class="subArticleDetails"> 
+            <div class="articleDetailsTitle txtCenter"> TITRE DE L’ARTICLE 4</div>
+            <div class="articleDetailsHeader txtCenter"> Qorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</div>
+            <video controls class="articleDetailsVideo" src="ressources/bar/P15.MOV"></video>
+            <div class="articleDetailsTxt txtCenter">
+                Norem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. <br><br>
+                Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in elementum tellus. <br><br>
+                Curabitur tempor quis eros tempus lacinia. Nam bibendum pellentesque quam a convallis. Sed ut vulputate nisi. Integer in felis sed leo vestibulum venenatis. Suspendisse quis arcu sem. Aenean feugiat ex eu vestibulum vestibulum. Morbi a eleifend magna. Nam metus lacus, porttitor eu mauris a, blandit ultrices nibh. Mauris sit amet magna non ligula vestibulum eleifend. Nulla varius volutpat turpis sed lacinia. Nam <br><br>
+                eget mi in purus lobortis eleifend. Sed nec ante dictum sem condimentum ullamcorper quis venenatis nisi. Proin vitae facilisis nisi, ac posuere leo.
+            </div>
+            <div class="flexRow fCenter otherArticle">
+                <div class="article" onclick="appearInstant(1)">
+                    <img class="articleImage" src="ressources/main/testeCafe.jpg" alt="">
+                    <div class="txtInScroll txtInArticle">Article 1</div>
+                </div>
+                <div class="article" onclick="appearInstant(2)">
+                    <img class="articleImage" src="ressources/main/teste1.jpg" alt="">
+                    <div class="txtInScroll txtInArticle">Article 2</div>
+                </div>
+                <div class="article" onclick="appearInstant(3)">
+                    <img class="articleImage" src="ressources/main/teste2.jpg" alt="">
+                    <div class="txtInScroll txtInArticle">Article 3</div>
+                </div>
+            </div>
+            <div class="closeBtn" onclick="remove(4)"> Fermer </div>
+        </div>
+    </div>
 </section>
 
 
@@ -112,6 +213,47 @@
 
 
 
+
+
+
+
+<!-- Galerie Photo -->
+<div class="moreInfo moreInfo1Line">
+    GALERIE PHOTO
+</div>
+<section class="gallery">
+    <div class="flexRow fCenter">
+        <div class="flexColumn galleryColumn">
+            <img class="g16-9" src="ressources/gallery/the2.jpg" alt="">
+            <img class="g16-9" src="ressources/gallery/cacao.jpg" alt="">
+            <img class="g9-16" src="ressources/gallery/cafes.jpg" alt="">
+            <img class="g16-9" src="ressources/gallery/tasse.jpg" alt="">
+            <img class="g9-16" src="ressources/gallery/cafes2.jpg" alt="">
+        </div>
+        <div class="flexColumn galleryColumn">
+            <img class="g16-9" src="ressources/gallery/the.jpg" alt="">
+            <img class="g9-16" src="ressources/gallery/cafes3.jpg" alt="">
+            <img class="g16-9" src="ressources/gallery/machine (2).jpg" alt="">
+            <img class="g16-9" src="ressources/gallery/graineC.jpg" alt="">
+            <img class="g16-9" src="ressources/gallery/graine.jpg" alt="">
+            <img class="g16-9" src="ressources/gallery/graine (2).jpg" alt="">
+        </div>
+        <div class="flexColumn galleryColumn">
+            <img class="g16-9" src="ressources/gallery/the3.jpg" alt="">
+            <img class="g16-9" src="ressources/gallery/lum.jpg" alt="">
+            <img class="g16-9" src="ressources/gallery/caisse.jpg" alt="">
+            <img class="g9-16" src="ressources/gallery/cafes4.jpg" alt="">
+            <img class="g16-9" src="ressources/gallery/sac2.jpg" alt="">
+            <img class="g16-9" src="ressources/gallery/sac.jpg" alt="">
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<!-- Footer -->
 <footer class="flexRow footerTxtSize fSpaceBetween">
     <div class="auteur">
         <b class='footerSubTitle'>Auteur :</b><br>
