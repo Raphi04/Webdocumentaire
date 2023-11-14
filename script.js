@@ -1,5 +1,5 @@
 // >Transition sur introduction_1 quand on lance le site
-document.getElementById("introduction_1").classList.add("smoothTransition");
+setTimeout(() => {document.getElementById("introduction_1").classList.add("smoothTransition")}, 200);
 
 //Récupération de toutes les div dans la navigation
 var navigation = document.querySelectorAll("#navigation > div");
@@ -10,7 +10,7 @@ var firstimeMusic = "true";
 
 //Fonction pour relier deux fichier html (à supprimer plus tard)
 function addHTML(divID, documentHTML) {
-    document.getElementById(divID).innerHTML = `<object type="text/html" data="${documentHTML}" width="100%" height="3000px"></object>`;
+    document.getElementById(divID).innerHTML = `<object type="text/html" data="${documentHTML}" width="100%" height="10000px"></object>`;
 }
 
 //Fonctions qui s'occupent des comportements en fin de vidéo de présentation
