@@ -10,6 +10,8 @@
     background-image: url("../../ressources/interactif/bar/bar.jpg");
     background-size: 100% 100%;
     position: relative;
+    background-size: cover;
+    background-position: 0px -90px;
 }
 
 #video1 {
