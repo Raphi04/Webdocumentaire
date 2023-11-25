@@ -11,3 +11,23 @@
     background-size: 100% 100%;
     position: relative;
 }
+
+#ouverture {
+    position: absolute;
+    bottom: 7%;
+    left: 27%;
+}
+
+#ouverture > img {
+    width: 65px;
+}
+
+#sacdecafe {
+    position: absolute;
+    bottom: 32%;
+    right: 20%;
+}
+
+#sacdecafe > img {
+    width: 45px;
+}
