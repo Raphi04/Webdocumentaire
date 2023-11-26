@@ -5,24 +5,38 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>La graine de l'éveil - Webdocumentaire sur la Brulerie de Meaux</title>
         <link href="style.css" rel="stylesheet" type="text/css" media="all">
+        <link rel="icon" type="image/x-icon" href="ressources/main/favicon.png">
     </head>
     <body>
-        <audio id="music" src = "ressources/main/backgroundMusic.mp3" hidden></audio>
+
+        <!-- Son d'ambiance -->
+        <audio class="music" id="streetMusic" src = "ressources/interactif/ruelle/street.mp3" loop hidden></audio>
+        <audio class="music" id="doorSound" src = "ressources/interactif/boutique/Door.mp3" hidden></audio>
+        <audio class="music" id="jazzMusic" src = "ressources/interactif/boutique/Jazz.mp3" loop hidden></audio>
+        <audio class="music" id="jazzMusicEtouffe" src = "ressources/interactif/sous-sol/JazzEttoufe.mp3" loop hidden></audio>
+
+        <!-- Premier contenu : Jeu intéractif -->
         <section id="main">
+            <!-- Décoration -->
+            <img id="feuille" src="ressources/main/feuille.png">
+            <img id="sacCafé" src="ressources/main/sac de café.png">
+
+            <!-- Jeu intéractif -->
             <section id="mainContainer">
                 <section id="interactif">
-                    <img id="sound" src="ressources/main/soundOff.png" onClick="musicStatement()">
+                    <img id="sound" src="ressources/main/soundOn.png" onClick="musicStatement()">
 
+                    <!-- Introduction 1 -->
                     <section id="introduction_1" class="window">
                         <img src="ressources/main/titre.png" alt="La graine de l'éveil">
                         <div>
                             <p>Tout le monde boit du café, mais personne ne connaît son histoire.</p>
-                            <p>Les experts en torréfaction de la Brûlerie de Meaux nous ont éclairés sur le sujet, découvrez un nouveau monde riche en sensations à travers leurs histoires...</p>
+                            <p>Pour en apprendre plus, nous sommes allés à la rencontre des artisans torréfacteurs de la Brûlerie de Meaux. Découvrez un nouveau monde riche en sensations à travers leur histoire...</p>
                         </div>
-                        <div onClick="changeWindow('introduction_2'), playMusic()">COMMENCER</div>
+                        <div onClick="changeWindow('introduction_4')">COMMENCER</div>
                     </section>
 
-
+                    <!-- Introduction 2 -->
                     <section id="introduction_2" class="window windowDisable">
                         <h2>Quelques données chiffrées</h2>
                         <div>
@@ -31,12 +45,11 @@
                             <p>En France, <strong>sept personnes sur dix</strong> consomment en moyenne 3,4&nbsp;kilogrammes de&nbsp;café  par an, soit <strong>environ 500 tasses</strong>.</p>
                         </div>
                         <div>
-                            <div onClick="changeWindow('introduction_4')" class="skip">PASSER L'INTRODUCTION</div>
                             <div onClick="changeWindow('introduction_3')"class="next">SUIVANT</div>
                         </div>
                     </section>
 
-
+                    <!-- Introduction 3 -->
                     <section id="introduction_3" class="window windowDisable">
                         <h2>La Brulerie de Meaux</h2>
                         <div>
@@ -47,11 +60,11 @@
                             <a href="https://www.google.com/maps/place/LA+BR%C3%9BLERIE+DE+MEAUX/@48.9552791,2.8782442,16.56z/data=!4m6!3m5!1s0x47e8a103ed000403:0xd63454f0c45ff1f6!8m2!3d48.9557817!4d2.8792296!16s%2Fg%2F1tg2cttk?entry=ttu" target="_blank"><img src="ressources/introduction/map.png"></a>
                         </div>
                         <div>
-                            <div onClick="changeWindow('introduction_4')" class="skip">PASSER L'INTRODUCTION</div>
-                            <div onClick="changeWindow('introduction_4')"class="next">SUIVANT</div>
+                            <div onClick="changeWindow('lastWindow')" class="next">SUIVANT</div>
                         </div>
                     </section>
 
+                    <!-- Introduction 4 -->
                     <section id="introduction_4" class="window windowDisable">
                         <video onEnded="videoEnd('videoPresentationButtonContainer')" id="videoPresentation" width="100%" height="100%" controls>
                             <source src="ressources/interactif/bar/P15.MOV" type="video/mp4">
@@ -64,13 +77,13 @@
 
                     </section>
 
+                    <!-- Ruelle -->
                     <section id="ruelle" class="window windowDisable">
-
                         <div id="laurier" class="interaction" onClick="popUpDisplay('laurierPopUp', 'open')">
                             <div class="containerWithArrowDown">Laurier rose</div>
-                            <img  src="ressources/interactif/rechercheB3.png">
+                            <img  src="ressources/interactif/recherche.png">
                         </div>
-                        <div id="laurierPopUp">
+                        <div id="laurierPopUp" class="PopUp">
                             <div>
                                 <img onClick="popUpDisplay('laurierPopUp', 'close')" src="ressources/main/cross.png">
                                 <h2>LE LAURIER ROSE</h2>
@@ -84,34 +97,169 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div id="porte" class="interaction" onClick="changeWindow('boutique')">
+                        <div id="porte" class="interaction" onClick="changeWindow('boutique'), playRing()">
                             <div class="containerWithArrowDown">Entrer</div>
-                            <img  src="ressources/interactif/boussoleB3.png">
+                            <img  src="ressources/interactif/boussole.png">
                         </div>
-
+                        <div class="interactionMoreButton" id="goBack" onClick="changeWindow('introduction_1')">
+                            <p>Revenir en arrière</p>
+                        </div>
+                        <div class="interactionMoreButton" id="moreInfo" onClick="changeWindow('introduction_2'); saveLastWindow('ruelle')">
+                            <p>Plus d'informations</p>
+                        </div>
                     </section>
 
+                    <!-- Boutique -->
                     <section id="boutique" class="window windowDisable">
-
+                        <div id="etagereCafe" class="interaction" onClick="popUpDisplay('etagereCafePopUp', 'open')">
+                            <div class="containerWithArrowDown">Séléction de café</div>
+                            <img  src="ressources/interactif/recherche.png">
+                        </div>
+                        <div id="etagereCafePopUp" class="PopUp">
+                            <div>
+                                <img onClick="popUpDisplay('etagereCafePopUp', 'close')" src="ressources/main/cross.png">
+                                <h2>LA SÉLECTION DE CAFÉ</h2>
+                                <div>
+                                    <a href="https://www.brulerie-meaux.fr/index.php?/Shop/Carte-des-cafes" target="_blank"><img src="ressources/interactif/boutique/selectionCafe.jpg"></a>
+                                    <div>
+                                        <p>Toutes les graines de café vendues par la Brûlerie de Meaux ont été torréfié selon un procédé qui leur est propre.</p>
+                                        <p>C'est un total de 42 types de cafés que nous pouvons trouver, certains sont issues d'un assemblage maison, d'autres sont parfumés et bien sûr nous retrouvons les graines elles&nbsp;-&nbsp;mêmes.</p>
+                                        <p>Allant du Brésil à l'Éthiopie en passant par la Jamaïque et d'autres encore, un véritable voyage nous est proposé.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div id="couloir" class="interaction" onClick="changeWindow('sousSol')">
                             <div class="containerWithArrowDown">Sous-Sol</div>
-                            <img  src="ressources/interactif/boussoleB3.png">
+                            <img  src="ressources/interactif/boussole.png">
                         </div>
-                        
+                        <div id="etagereThe" class="interaction" onClick="popUpDisplay('etagereThePopUp', 'open')">
+                            <div class="containerWithArrowDown">Séléction de thés et infusions</div>
+                            <img  src="ressources/interactif/recherche.png">
+                        </div>
+                        <div id="etagereThePopUp" class="PopUp">
+                            <div>
+                                <img onClick="popUpDisplay('etagereThePopUp', 'close')" src="ressources/main/cross.png">
+                                <h2>LA SÉLECTION DES THÉS ET DES INFUSIONS</h2>
+                                <div>
+                                    <a href="https://www.brulerie-meaux.fr/index.php?/Shop/Carte-des-thes" target="_blank"><img src="ressources/interactif/boutique/selectionThe.jpg"></a>
+                                    <div>
+                                        <p>En contraste avec la puissance du café, la douceur du thé et de l'infusion sont au rendez&nbsp;-&nbsp;vous à la Brûlerie de Meaux.</p>
+                                        <p>Thé vert, thé noire, maté ou tilleul, plus d'une centaine de ces plantes aux bienfaits médicinales sont disponibles pour ravir la clientèle.</p>
+                                        <p>Réputé pour leurs vertues digestives et tranquillisante, il est tout de même déconseiller, tout comme pour le café, d'en consommer plus de cinq tasses par jour.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="goBar" class="interaction" onClick="changeWindow('bar')">
+                            <div class="containerWithArrowDown">Bar</div>
+                            <img src="ressources/interactif/boussole.png">
+                        </div>
+                        <div class="interactionMoreButton" id="goBack" onClick="changeWindow('ruelle')">
+                            <p>Revenir en arrière</p>
+                        </div>
+                        <div class="interactionMoreButton" id="moreInfo" onClick="changeWindow('introduction_2'); saveLastWindow('boutique')">
+                            <p>Plus d'informations</p>
+                        </div>
                     </section>
                     
+                    <!-- Bar -->
                     <section id="bar" class="window windowDisable">
                         <video id="video1" width="100%" height="100%" controls loop autoplay hidden>
                             <source src="ressources/bar/P15.MOV" type="video/mp4">
                         </video>
+                        <div id="liqueur" class="interaction" onClick="popUpDisplay('liqueurPopUp', 'open')">
+                            <div class="containerWithArrowDown">Liqueur de café</div>
+                            <img  src="ressources/interactif/recherche.png">
+                        </div>
+                        <div id="liqueurPopUp" class="PopUp">
+                            <div>
+                                <img onClick="popUpDisplay('liqueurPopUp', 'close')" src="ressources/main/cross.png">
+                                <h2>LA LIQUEUR DE CAFÉ</h2>
+                                <div>
+                                    <a href="https://www.brulerie-meaux.fr/index.php?/Recettes/Incontournable-Realiser-sa-liqueur-de-cafe" target="_blank"><img src="ressources/interactif/bar/liqueur.png"></a>
+                                    <div>
+                                        <p>Issue de la macération du café et du sucre dans de l'eau de vie, la liqueur de café peut être consommée ou utilisée comme un ingrédient de dessert ou de cocktail.</p>
+                                        <p>Les artisans de la Brûlerie de Meaux proposent à leurs clients leurs propres recettes issues d'un travail acharné et de nombreux essaies.</p>
+                                        <p>Elle est peut être consommée nature, mais il est préférable de la réchauffer accompagné d'un nuage de crème.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="preparationCafe" class="interaction" onClick="popUpDisplay('preparationCafePopUp', 'open')">
+                            <div class="containerWithArrowDown">Préparation de café</div>
+                            <img  src="ressources/interactif/recherche.png">
+                        </div>
+                        <div id="preparationCafePopUp" class="PopUp">
+                            <div>
+                                <img onClick="popUpDisplay('preparationCafePopUp', 'close')" src="ressources/main/cross.png">
+                                <h2>LA LIQUEUR DE CAFÉ</h2>
+                                <div>
+                                    <a href="https://fr.wikipedia.org/wiki/Laurier-rose" target="_blank"><img src="ressources/interactif/ruelle/laurier.jpg"></a>
+                                    <div>
+                                        <p>Sorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                        <p>Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                                        <p>Curabitur tempus urna at turpis condimentum lobortis.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="interactionMoreButton" id="goBack" onClick="changeWindow('boutique')">
+                            <p>Revenir en arrière</p>
+                        </div>
+                        <div class="interactionMoreButton" id="moreInfo" onClick="changeWindow('introduction_2'); saveLastWindow('bar')">
+                            <p>Plus d'informations</p>
+                        </div>
                     </section>
 
+                    <!-- Sous-sol -->
                     <section id="sousSol" class="window windowDisable">
-                        </video>
+                        <div id="sacdecafe" class="interaction" onClick="popUpDisplay('sacdecafePopUp', 'open')">
+                            <div class="containerWithArrowDown">Sac de café</div>
+                            <img  src="ressources/interactif/recherche.png">
+                        </div>
+                        <div id="sacdecafePopUp" class="PopUp">
+                            <div>
+                                <img onClick="popUpDisplay('sacdecafePopUp', 'close')" src="ressources/main/cross.png">
+                                <h2>LES SAC DE CAFÉ</h2>
+                                <div>
+                                    <a href="https://fr.wikipedia.org/wiki/Laurier-rose" target="_blank"><img src="ressources/interactif/ruelle/laurier.jpg"></a>
+                                    <div>
+                                        <p>Sorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                        <p>Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                                        <p>Curabitur tempus urna at turpis condimentum lobortis.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="ouverture" class="interaction" onClick="popUpDisplay('ouverturePopUp', 'open')">
+                            <div class="containerWithArrowDown">Ouverture d'un sac</div>
+                            <img  src="ressources/interactif/recherche.png">
+                        </div>
+                        <div id="sacdecafePopUp" class="PopUp">
+                            <div>
+                                <img onClick="popUpDisplay('ouverturePopUp', 'close')" src="ressources/main/cross.png">
+                                <h2>LES SAC DE CAFÉ</h2>
+                                <div>
+                                    <a href="https://fr.wikipedia.org/wiki/Laurier-rose" target="_blank"><img src="ressources/interactif/ruelle/laurier.jpg"></a>
+                                    <div>
+                                        <p>Sorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                        <p>Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                                        <p>Curabitur tempus urna at turpis condimentum lobortis.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="interactionMoreButton" id="goBack" onClick="changeWindow('boutique')">
+                            <p>Revenir en arrière</p>
+                        </div>
+                        <div class="interactionMoreButton" id="moreInfo" onClick="changeWindow('introduction_2'); saveLastWindow('sousSol')">
+                            <p>Plus d'informations</p>
+                        </div>
                     </section>
-
                 </section>
+
+                <!-- Navigation du jeu intéractif -->
                 <section id="navigation">
                     <div onClick="changeWindow('introduction_1')" class="selected">
                         <p>Introduction</p>
@@ -121,7 +269,7 @@
                         <p>Ruelle</p>
                     </div>
                     <hr>
-                    <div onClick="changeWindow('boutique')">
+                    <div onClick="changeWindow('boutique'), playRing()">
                         <p>Boutique</p>
                     </div>
                     <hr>
@@ -133,17 +281,18 @@
                         <p>Bar</p>
                     </div>
                 </section>
+
             </section>
+            
+            <!-- Transition pour le prochain contenu -->
             <div id="goDownContainer">
                 <div>
                     <img onClick ="document.getElementById('scrollerSection1').scrollIntoView({behavior : 'smooth', block : 'center'})" id="arrow" onClick="goDown" src="ressources/main/flèche sombre.png">
                 </div>
             </div>
-
-            <img id="feuille" src="ressources/main/feuille.png">
-            <img id="sacCafé" src="ressources/main/sac de café.png">
         </section>
 
+        <!-- Seconde parti du webdocumentaire -->
         <section id="secondContent">
             <script src="script.js"></script>
             <script src="Jeremie.js"></script>
