@@ -23,7 +23,7 @@ function arrowScroll(scrollerNumber, direction) {
         }
         newImgName = imgName + newImg;
         document.getElementById(newImgName).scrollIntoView({block: "nearest", inline: "center"});
-        scrollerSection.setAttribute("value", newImg)
+        scrollerSection.setAttribute("value", newImg);
     }
     else if (direction == "right") {
         newImg = currentImg + 1;
@@ -32,7 +32,7 @@ function arrowScroll(scrollerNumber, direction) {
         }
         newImgName = imgName + newImg;
         document.getElementById(newImgName).scrollIntoView({block: "nearest", inline: "center"});
-        scrollerSection.setAttribute("value", newImg)
+        scrollerSection.setAttribute("value", newImg);
     }
     currentBall(ballName, currentImg, newImg);
 }
@@ -77,7 +77,7 @@ function currentBall(ballName, oldBallNumber, newBallNumber) {
 function appear(nombre) {
     elementID = "articleDetails" + nombre;
 
-    var allDetails = document.querySelectorAll(".articleDetails");
+    allDetails = document.querySelectorAll(".articleDetails");
     allDetails.forEach(function(Detail) {
         Detail.classList.remove('appear');
         Detail.classList.remove('appearInstant');
@@ -85,13 +85,13 @@ function appear(nombre) {
 
     document.getElementById(elementID).classList.toggle('appear');
     document.getElementById(elementID).scrollIntoView({block: "center"});
-    document.getElementById("body").classList.toggle('body');
+    // document.getElementById("body").classList.add('body');
 }
 
 function appearInstant(nombre) {
     elementID = "articleDetails" + nombre;
 
-    var allDetails = document.querySelectorAll(".articleDetails");
+    allDetails = document.querySelectorAll(".articleDetails");
     allDetails.forEach(function(Detail) {
         Detail.classList.remove('appear');
         Detail.classList.remove('appearInstant');
@@ -99,7 +99,7 @@ function appearInstant(nombre) {
 
     document.getElementById(elementID).classList.toggle('appearInstant');
     document.getElementById(elementID).scrollIntoView({block: "center"});
-    document.getElementById("body").classList.toggle('body');
+    // document.getElementById("body").classList.add('body');
 }
 
 function remove(nombre) {
@@ -108,5 +108,35 @@ function remove(nombre) {
     document.getElementById(elementID).classList.remove('appear');
     document.getElementById(elementID).classList.remove('appearInstant');
     document.getElementById("articleDetails1").scrollIntoView({block: "center"});
-    document.getElementById("body").classList.toggle('body');
+    // document.getElementById("body").classList.remove('body');
+}
+
+
+
+
+
+// Afficher Image Galerie
+
+function appearImgGalery(link, is9_19) {
+    if (is9_19) {
+        document.getElementById("bigGallery").classList.add('bigGallery9-16');
+    }
+    else {
+        document.getElementById("bigGallery").classList.add('bigGallery16-9');
+    }
+    document.getElementById("bigGallery").classList.add('appear');
+    document.getElementById("galleryCroix").classList.add('appear');
+    document.getElementById("backgroundCover").classList.add('appear');
+    bigGalleryImg = document.getElementById("bigGalleryImg");
+    bigGalleryImg.src = link;
+    document.getElementById("body").classList.add('body');
+}
+
+function removeGalery() {
+    document.getElementById("bigGallery").classList.remove('appear');
+    document.getElementById("bigGallery").classList.remove('bigGallery9-16');
+    document.getElementById("bigGallery").classList.remove('bigGallery16-9');
+    document.getElementById("galleryCroix").classList.remove('appear');
+    document.getElementById("backgroundCover").classList.remove('appear');
+    document.getElementById("body").classList.remove('body');
 }

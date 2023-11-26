@@ -82,6 +82,7 @@
     margin-left: 20px;
     margin-right: 20px;
     transition-duration: 200ms;
+    cursor: pointer;
 }
 
 .ball:hover {
@@ -98,6 +99,7 @@
     width: 133px;
     top: 50%;
     transition-duration: 200ms;
+    cursor: pointer;
 }
 
 .arrow:hover {
@@ -172,6 +174,7 @@
     border-radius: 20px;
     border: 5px solid #1F1D19;
     z-index: 1;
+    cursor: pointer;
 }
 
 .articleImage {
@@ -237,9 +240,14 @@
         font-weight: 600;
         line-height: 1.1;
     }
+    
+    .headerTooBig {
+        font-size: 14px !important;
+    }
     .articleDetailsTxt {
         font-size: 14px;
-        line-height: 1.1;
+        line-height: 1.2;
+        /* text-align: justify !important; */
     }
     .txtCenter {
         text-align: center;
@@ -268,6 +276,7 @@
     .otherArticle > .article > .txtInArticle {
         font-size: 10px !important;
         padding: 5px !important;
+        line-height: 1.2 !important;
     }
 
     .closeBtn {
@@ -279,6 +288,7 @@
         background-color: #470404;
         color: white;
         transition-duration: 300ms;
+        cursor: pointer;
     }
 
     .closeBtn:hover {
@@ -293,6 +303,8 @@
         margin-left: auto;
         width: 20px;
         height: 20px;
+        cursor: pointer;
+        transition: 0ms !important;
     }
 
     .icroix{
@@ -315,8 +327,6 @@
     }
 
     .body {
-        background-color: rgba(48, 44, 53, 0.65);
-        transition: 1000ms;
         overflow: hidden;
     }
 
@@ -345,12 +355,80 @@
 
 .g9-16 {
     width: 304px;
-    height: 382px;
+    height: 392px;
     object-fit: cover;
     margin: auto;
     margin-bottom: 20px;
     margin-top: 20px;
 }
+
+.gImg {
+    cursor: pointer;
+    transition-duration: 300ms;
+    border: 5px solid #1F1D19;
+    border-radius: 10px;
+}
+
+.gImg:hover {
+    scale: 1.1;
+}
+
+    /* Gallery zoom */
+    #bigGallery {
+        visibility: hidden;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+        object-fit: cover;
+        opacity: 0;
+    }
+
+    .bigGallery16-9 {
+        width: 64%;
+        height: auto;
+    }
+
+    .bigGallery9-16 {
+        width: 297px !important;
+        height: 528px !important;
+    }
+
+    #galleryContent {
+        position: relative;
+    }
+
+    #bigGalleryImg {
+        width: 100%;
+        height: 100%;
+        border: 8px solid #1F1D19;
+        border-radius:10px;
+    }
+
+    #galleryCroix {
+        position: fixed !important;
+        float: none;
+        top: 3% !important;
+        right: 3% !important;
+        visibility: hidden;
+        z-index: 1000;
+    }
+
+    #backgroundCover {
+        position: fixed;
+        visibility: hidden;
+        z-index: 10;
+        background-color: rgba(20, 20, 20, 0.7);
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+
+
+
 
 /* Footer */
 footer {
