@@ -85,7 +85,7 @@ function appear(nombre) {
 
     document.getElementById(elementID).classList.toggle('appear');
     document.getElementById(elementID).scrollIntoView({block: "center"});
-    // document.getElementById("body").classList.add('body');
+    setTimeout(bodyStop, 400);
 }
 
 function appearInstant(nombre) {
@@ -99,7 +99,7 @@ function appearInstant(nombre) {
 
     document.getElementById(elementID).classList.toggle('appearInstant');
     document.getElementById(elementID).scrollIntoView({block: "center"});
-    // document.getElementById("body").classList.add('body');
+    setTimeout(bodyStop, 400);
 }
 
 function remove(nombre) {
@@ -107,8 +107,11 @@ function remove(nombre) {
 
     document.getElementById(elementID).classList.remove('appear');
     document.getElementById(elementID).classList.remove('appearInstant');
-    document.getElementById("articleDetails1").scrollIntoView({block: "center"});
-    // document.getElementById("body").classList.remove('body');
+    document.getElementById("body").classList.remove('body');
+}
+
+function bodyStop() {
+    document.getElementById("body").classList.add('body');
 }
 
 

@@ -208,8 +208,8 @@
     /* Articles détails*/
     .articleDetails{
         position: absolute;
-        width: 900px;
-        height: 560px;
+        width: 70%;
+        height: 85%;
         padding: 10px;
         border-radius: 30px;
         overflow: hidden;
@@ -235,19 +235,27 @@
         line-height: 1;
         margin-bottom: 10px;
     }
+
+    .auteurA {
+        color: #535353;
+        font-style: italic;
+        padding: 5px 0 10px 100px !important;
+        font-size: 14px !important;
+    }
+
     .articleDetailsHeader {
         font-size: 16px;
         font-weight: 600;
         line-height: 1.1;
     }
-    
     .headerTooBig {
         font-size: 14px !important;
+        text-align: justify !important;
     }
     .articleDetailsTxt {
         font-size: 14px;
         line-height: 1.2;
-        /* text-align: justify !important; */
+        text-align: justify !important;
     }
     .txtCenter {
         text-align: center;
@@ -258,9 +266,13 @@
         display: block;
         margin: 0 auto;
         width: 700px;
-        border: 10px solid #1F1D19;
+        border: 5px solid #1F1D19;
         margin-top: 25px;
         margin-bottom: 50px;
+    }
+
+    .boderRadius {
+        border-radius: 20px;
     }
 
     .otherArticle {
@@ -551,9 +563,82 @@ right: 20px;
         line-height: 26px !important;
         padding: 14px !important;
     }
+
+    .velourBackground2 {
+        height: 126px;
+    }
         /* Article Details */
-        .velourBackground2 {
-            height: 126px;
+        .articleDetails{
+            padding: 14px;
+            border-radius: 42px;
+        }
+        .subArticleDetails {
+            margin-top: 28px;
+        }
+    
+        .articleDetailsTitle {
+            font-size: 35px;
+            margin-bottom: 14px;
+        }
+    
+        .auteurA {
+            padding: 7px 0 14px 140px !important;
+            font-size: 20px !important;
+        }
+    
+        .articleDetailsHeader {
+            font-size: 22px;
+        }
+        .headerTooBig {
+            font-size: 20px !important;
+        }
+        .articleDetailsTxt {
+            font-size: 20px;
+        }
+        .txtCenter {
+            padding: 0 140px 0 140px;
+        }
+    
+        .articleDetailsVideo {
+            width: 980px;
+            border: 7px solid #1F1D19;
+            margin-top: 35px;
+            margin-bottom: 70px;
+        }
+    
+        .otherArticle {
+            margin-top: 49px;
+            margin-bottom: 49px;
+        }
+    
+        .otherArticle > .article{
+            width: 280px;
+            height: 175px;
+            margin: 0 14px 0 14px;
+        }
+        .otherArticle > .article > .txtInArticle {
+            font-size: 14px !important;
+            padding: 7px !important;
+        }
+    
+        .closeBtn {
+            padding: 0 49px 0 49px;
+            margin-bottom: 14px;
+            border-radius: 28px;
+        }
+    
+        .closeBtn:hover {
+            scale: 1.1;
+        }
+    
+        .croix{
+            padding: 14px 14px 0 0;
+            width: 28px;
+            height: 28px;
+        }
+    
+        .icroix{
+            width: 28px;
         }
 
 
