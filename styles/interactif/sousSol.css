@@ -13,7 +13,6 @@
 }
 
 #ouverture {
-    position: absolute;
     bottom: 7%;
     left: 27%;
 }
@@ -23,7 +22,6 @@
 }
 
 #sacdecafe {
-    position: absolute;
     bottom: 32%;
     right: 20%;
 }

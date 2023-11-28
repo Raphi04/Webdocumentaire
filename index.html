@@ -67,7 +67,7 @@
                     <!-- Introduction 4 -->
                     <section id="introduction_4" class="window windowDisable">
                         <video onEnded="videoEnd('videoPresentationButtonContainer')" id="videoPresentation" width="100%" height="100%" controls>
-                            <source src="ressources/interactif/bar/P15.MOV" type="video/mp4">
+                            <source src="ressources/introduction/Vidéo 3 (Présentation).mp4" type="video/mp4">
                         </video>
 
                         <div id="videoPresentationButtonContainer">
@@ -79,22 +79,15 @@
 
                     <!-- Ruelle -->
                     <section id="ruelle" class="window windowDisable">
-                        <div id="laurier" class="interaction" onClick="popUpDisplay('laurierPopUp', 'open')">
-                            <div class="containerWithArrowDown">Laurier rose</div>
+                        <div id="brulerie" class="interaction" onClick="popUpDisplay('laurierPopUp', 'open')">
+                            <div class="containerWithArrowDown">Brûlerie de Meaux</div>
                             <img  src="ressources/interactif/recherche.png">
                         </div>
                         <div id="laurierPopUp" class="PopUp">
                             <div>
-                                <img onClick="popUpDisplay('laurierPopUp', 'close')" src="ressources/main/cross.png">
-                                <h2>LE LAURIER ROSE</h2>
-                                <div>
-                                    <a href="https://fr.wikipedia.org/wiki/Laurier-rose" target="_blank"><img src="ressources/interactif/ruelle/laurier.jpg"></a>
-                                    <div>
-                                        <p>Sorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                        <p>Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-                                        <p>Curabitur tempus urna at turpis condimentum lobortis.</p>
-                                    </div>
-                                </div>
+                                <img onClick="popUpDisplay('laurierPopUp', 'close')" src="ressources/main/crossBeige.png">
+                                <h2>L'HISTOIRE DE LA BRÛLERIE DE MEAUX</h2>
+                                <audio onPlay="currentMusic.pause()" onPause="currentMusic.play()" width="200px" height="90%" controls src="ressources/interactif/ruelle/Audio (Bûlerie de Meaux).mp4"></audio>
                             </div>
                         </div>
                         <div id="porte" class="interaction" onClick="changeWindow('boutique'), playRing()">
@@ -117,7 +110,7 @@
                         </div>
                         <div id="etagereCafePopUp" class="PopUp">
                             <div>
-                                <img onClick="popUpDisplay('etagereCafePopUp', 'close')" src="ressources/main/cross.png">
+                                <img onClick="popUpDisplay('etagereCafePopUp', 'close')" src="ressources/main/crossBeige.png">
                                 <h2>LA SÉLECTION DE CAFÉ</h2>
                                 <div>
                                     <a href="https://www.brulerie-meaux.fr/index.php?/Shop/Carte-des-cafes" target="_blank"><img src="ressources/interactif/boutique/selectionCafe.jpg"></a>
@@ -139,7 +132,7 @@
                         </div>
                         <div id="etagereThePopUp" class="PopUp">
                             <div>
-                                <img onClick="popUpDisplay('etagereThePopUp', 'close')" src="ressources/main/cross.png">
+                                <img onClick="popUpDisplay('etagereThePopUp', 'close')" src="ressources/main/crossBeige.png">
                                 <h2>LA SÉLECTION DES THÉS ET DES INFUSIONS</h2>
                                 <div>
                                     <a href="https://www.brulerie-meaux.fr/index.php?/Shop/Carte-des-thes" target="_blank"><img src="ressources/interactif/boutique/selectionThe.jpg"></a>
@@ -165,16 +158,13 @@
                     
                     <!-- Bar -->
                     <section id="bar" class="window windowDisable">
-                        <video id="video1" width="100%" height="100%" controls loop autoplay hidden>
-                            <source src="ressources/bar/P15.MOV" type="video/mp4">
-                        </video>
                         <div id="liqueur" class="interaction" onClick="popUpDisplay('liqueurPopUp', 'open')">
                             <div class="containerWithArrowDown">Liqueur de café</div>
                             <img  src="ressources/interactif/recherche.png">
                         </div>
                         <div id="liqueurPopUp" class="PopUp">
                             <div>
-                                <img onClick="popUpDisplay('liqueurPopUp', 'close')" src="ressources/main/cross.png">
+                                <img onClick="popUpDisplay('liqueurPopUp', 'close')" src="ressources/main/crossBeige.png">
                                 <h2>LA LIQUEUR DE CAFÉ</h2>
                                 <div>
                                     <a href="https://www.brulerie-meaux.fr/index.php?/Recettes/Incontournable-Realiser-sa-liqueur-de-cafe" target="_blank"><img src="ressources/interactif/bar/liqueur.png"></a>
@@ -192,16 +182,11 @@
                         </div>
                         <div id="preparationCafePopUp" class="PopUp">
                             <div>
-                                <img onClick="popUpDisplay('preparationCafePopUp', 'close')" src="ressources/main/cross.png">
-                                <h2>LA LIQUEUR DE CAFÉ</h2>
-                                <div>
-                                    <a href="https://fr.wikipedia.org/wiki/Laurier-rose" target="_blank"><img src="ressources/interactif/ruelle/laurier.jpg"></a>
-                                    <div>
-                                        <p>Sorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                        <p>Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-                                        <p>Curabitur tempus urna at turpis condimentum lobortis.</p>
-                                    </div>
-                                </div>
+                                <img onClick="popUpDisplay('preparationCafePopUp', 'close')" src="ressources/main/crossBeige.png">
+                                <h2>LA PRÉPARATION D'UN CAFÉ</h2>
+                                <video onPlay="currentMusic.pause()" onPause="currentMusic.play()" width="90%" height="90%" controls>
+                                    <source src="ressources/interactif/bar/Vidéo 1 (Préparation d'un café).mp4" type="video/mp4">
+                                </video>                                
                             </div>
                         </div>
                         <div class="interactionMoreButton" id="goBack" onClick="changeWindow('boutique')">
@@ -220,7 +205,7 @@
                         </div>
                         <div id="sacdecafePopUp" class="PopUp">
                             <div>
-                                <img onClick="popUpDisplay('sacdecafePopUp', 'close')" src="ressources/main/cross.png">
+                                <img onClick="popUpDisplay('sacdecafePopUp', 'close')" src="ressources/main/crossBeige.png">
                                 <h2>LES SAC DE CAFÉ</h2>
                                 <div>
                                     <a href="https://fr.wikipedia.org/wiki/Laurier-rose" target="_blank"><img src="ressources/interactif/ruelle/laurier.jpg"></a>
@@ -233,20 +218,17 @@
                             </div>
                         </div>
                         <div id="ouverture" class="interaction" onClick="popUpDisplay('ouverturePopUp', 'open')">
-                            <div class="containerWithArrowDown">Ouverture d'un sac</div>
+                            <div class="containerWithArrowDown">Approvisionnement</div>
                             <img  src="ressources/interactif/recherche.png">
                         </div>
-                        <div id="sacdecafePopUp" class="PopUp">
+                        <div id="ouverturePopUp" class="PopUp">
                             <div>
-                                <img onClick="popUpDisplay('ouverturePopUp', 'close')" src="ressources/main/cross.png">
-                                <h2>LES SAC DE CAFÉ</h2>
+                                <img onClick="popUpDisplay('ouverturePopUp', 'close')" src="ressources/main/crossBeige.png">
+                                <h2>POURQUOI S'APPROVISIONNER À LA SOURCE</h2>
                                 <div>
-                                    <a href="https://fr.wikipedia.org/wiki/Laurier-rose" target="_blank"><img src="ressources/interactif/ruelle/laurier.jpg"></a>
-                                    <div>
-                                        <p>Sorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                        <p>Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-                                        <p>Curabitur tempus urna at turpis condimentum lobortis.</p>
-                                    </div>
+                                    <video onPlay="currentMusic.pause()" onPause="currentMusic.play()" width="90%" height="90%" controls>
+                                        <source src="ressources/interactif/sous-sol/Vidéo 5 (Pourquoi s'approvisonner à la source).mp4" type="video/mp4">
+                                    </video>    
                                 </div>
                             </div>
                         </div>

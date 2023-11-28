@@ -14,13 +14,11 @@
 }
 
 #liqueur {
-    position: absolute;
     top: 22%;
     right: 1%;
 }
 
 #preparationCafe {
-    position: absolute;
     top: 50%;
     right: 22%;
 }
@@ -29,6 +27,7 @@
     width: 55px;
 }
 
-#video1 {
-
+#preparationCafePopUp > div {
+    width: 63%;
+    height: 80%;
 }

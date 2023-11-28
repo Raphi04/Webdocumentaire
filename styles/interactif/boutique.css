@@ -10,7 +10,6 @@
 }
 
 #etagereCafe {
-    position: absolute;
     bottom: 50%;
     left: 10%;
 }
@@ -20,7 +19,6 @@
 }
 
 #etagereThe {
-    position: absolute;
     top: 20%;
     right: 20%;
 }
@@ -30,13 +28,11 @@
 }
 
 #couloir{
-    position: absolute;
     top: 38%;
     left: 47.5%;
 }
 
 #goBar{
-    position: absolute;
     right: 5%;
     bottom: 20%;
 }

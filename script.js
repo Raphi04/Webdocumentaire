@@ -179,15 +179,7 @@ function changeWindow(newWindowID){
     }
 }
 
-//Fonctions pour play une musique (à tout modifier plus tard) 
-function playMusic(window) {
-    if (firstimeMusic == "true") {
-        document.getElementById("music").play();
-        document.getElementById("sound").src="ressources/main/soundOn.png";
-        musicState = "on";
-        firstimeMusic = "false"
-    }
-}
+//Fonction pourchanger l'état du son
 function musicStatement() {
     if (musicState == "off") {
         document.getElementById("sound").src="ressources/main/soundOn.png";
