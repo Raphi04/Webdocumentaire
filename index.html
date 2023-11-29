@@ -5,9 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>La graine de l'éveil - Webdocumentaire sur la Brulerie de Meaux</title>
         <link href="style.css" rel="stylesheet" type="text/css" media="all">
+        <link href="styles/secondContent.css" rel="stylesheet" type="text/css" media="all">
         <link rel="icon" type="image/x-icon" href="ressources/main/favicon.png">
     </head>
-    <body>
+    <body id="body">
 
         <!-- Son d'ambiance -->
         <audio class="music" id="streetMusic" src = "ressources/interactif/ruelle/street.mp3" loop hidden></audio>
@@ -85,9 +86,9 @@
                         </div>
                         <div id="laurierPopUp" class="PopUp">
                             <div>
-                                <img onClick="popUpDisplay('laurierPopUp', 'close')" src="ressources/main/crossBeige.png">
+                                <img onClick="popUpDisplay('laurierPopUp', 'close'), document.getElementById('histoireBrulerie').pause();" src="ressources/main/crossBeige.png">
                                 <h2>L'HISTOIRE DE LA BRÛLERIE DE MEAUX</h2>
-                                <audio onPlay="currentMusic.pause()" onPause="currentMusic.play()" width="200px" height="90%" controls src="ressources/interactif/ruelle/Audio (Bûlerie de Meaux).mp4"></audio>
+                                <audio id="histoireBrulerie" onPlay="currentMusic.pause()" onPause="currentMusic.play()" width="200px" height="90%" controls src="ressources/interactif/ruelle/Audio (Bûlerie de Meaux).mp4"></audio>
                             </div>
                         </div>
                         <div id="porte" class="interaction" onClick="changeWindow('boutique'), playRing()">
@@ -182,9 +183,9 @@
                         </div>
                         <div id="preparationCafePopUp" class="PopUp">
                             <div>
-                                <img onClick="popUpDisplay('preparationCafePopUp', 'close')" src="ressources/main/crossBeige.png">
+                                <img onClick="popUpDisplay('preparationCafePopUp', 'close'), document.getElementById('preparationCafeVideo').pause();" src="ressources/main/crossBeige.png">
                                 <h2>LA PRÉPARATION D'UN CAFÉ</h2>
-                                <video onPlay="currentMusic.pause()" onPause="currentMusic.play()" width="90%" height="90%" controls>
+                                <video id="preparationCafeVideo" onPlay="currentMusic.pause()" onPause="currentMusic.play()" width="90%" height="90%" controls>
                                     <source src="ressources/interactif/bar/Vidéo 1 (Préparation d'un café).mp4" type="video/mp4">
                                 </video>                                
                             </div>
@@ -223,10 +224,10 @@
                         </div>
                         <div id="ouverturePopUp" class="PopUp">
                             <div>
-                                <img onClick="popUpDisplay('ouverturePopUp', 'close')" src="ressources/main/crossBeige.png">
-                                <h2>POURQUOI S'APPROVISIONNER À LA SOURCE</h2>
+                                <img onClick="popUpDisplay('ouverturePopUp', 'close'), document.getElementById('approvisionnement').pause();" src="ressources/main/crossBeige.png">
+                                <h2>POURQUOI S'APPROVISIONNER À LA SOURCE ?</h2>
                                 <div>
-                                    <video onPlay="currentMusic.pause()" onPause="currentMusic.play()" width="90%" height="90%" controls>
+                                    <video id="approvisionnement" onPlay="currentMusic.pause()" onPause="currentMusic.play()" width="90%" height="90%" controls>
                                         <source src="ressources/interactif/sous-sol/Vidéo 5 (Pourquoi s'approvisonner à la source).mp4" type="video/mp4">
                                     </video>    
                                 </div>
@@ -276,9 +277,274 @@
 
         <!-- Seconde parti du webdocumentaire -->
         <section id="secondContent">
+            <!-- Scroller d'image -->
+            <section id="scrollerSection1" class="scrollerSection" value="1" maxValue="4">
+                <div class="flexRow fVerticalCenter">
+                    <div class="velourBackground"><img class="arrow" id="arrowLeft" src="ressources/main/flèche.png" alt="" onclick="arrowScroll('N1', 'left')"></div>
+                    <div class="imgScroller" id="Scroller1">
+                        <span class="scrollerBox">
+                            <img class="imgInScroll" id="img1" src="ressources/slider/fruit.jpg" alt="">
+                            <div class="txtInScroll"> Les graines de cafés viennent du caféier qui produit  des fruits, appeler la cerise celle-ci possède de belle couleur rouge, jaune, voire orange suivant les variétés. </div>
+                        </span>
+                        <span class="scrollerBox">
+                            <img class="imgInScroll" id="img2" src="ressources/slider/graine.jpg" alt="">
+                            <div class="txtInScroll"> Le café est sécher pour être mieux conserver avant sa torréfaction. </div>
+                        </span>
+                        <span class="scrollerBox">
+                            <img class="imgInScroll" id="img3" src="ressources/slider/torrifie.jpg" alt="">
+                            <div class="txtInScroll"> Torréfier le café permet de le rendre comestible puis de révéler toute ses saveurs et arômes. </div>
+                        </span>
+                        <span class="scrollerBox">
+                            <img class="imgInScroll" id="img4" src="ressources/slider/cafe.jpg" alt="">
+                            <div class="txtInScroll"> Café soigneusement préparer.</div>
+                        </span>
+                    </div>
+                    <div class="velourBackground"><img class="arrow" id="arrowRight" src="ressources/main/flècheD.png" alt="" onclick="arrowScroll('N1', 'right')"></div>
+                </div>
+
+                <!-- Image Ball -->
+                <div class="ballBox">
+                    <div id="ball1" class="ball  currentBall" onclick="ballScroll('N1', 1)"></div>
+                    <div id="ball2" class="ball" onclick="ballScroll('N1', 2)"></div>
+                    <div id="ball3" class="ball" onclick="ballScroll('N1', 3)"></div>
+                    <div id="ball4" class="ball" onclick="ballScroll('N1', 4)"></div>
+                </div>
+            </section>
+
+
+
+
+            <!-- Articles -->
+            <div class="moreInfo">
+                PLUS D’INFORMATIONS <br> SUR LE CAFÉ
+            </div>
+            <section id="articleSection">
+                <!-- Les Articles -->
+                <div id="articleLine1" class="flexRow articleLine">
+                    <div id="article1" class="article" onclick="appear(1)">
+                        <img id="articleImage1" class="articleImage" src="ressources/main/testeCafe.jpg" alt="">
+                        <div class="txtInScroll txtInArticle">La Brûlerie de Meaux face au industriel</div>
+                    </div>
+
+                    <div id="article2" class="article" onclick="appear(2)">
+                        <img id="articleImage2" class="articleImage" src="ressources/main/teste1.jpg" alt="">
+                        <div class="txtInScroll txtInArticle"> À la Découverte du Café Signature de la Brûlerie : l’Italian </div>
+                    </div>
+                    <div class="velourBackground2"></div>
+                </div>
+
+                <div id="articleLine2" class="flexRow articleLine">
+                    <div id="article3" class="article" onclick="appear(3)">
+                        <img id="articleImage3" class="articleImage" src="ressources/article/article3.jpeg" alt="">
+                        <div class="txtInScroll txtInArticle">La Frontière entre Plaisir et Risques</div>
+                    </div>
+
+                    <div id="article4" class="article" onclick="appear(4)">
+                        <img id="articleImage4" class="articleImage" src="ressources/main/teste3.jpg" alt="">
+                        <div class="txtInScroll txtInArticle">Article 4</div>
+                    </div>
+                    <div class="velourBackground2"></div>
+                </div>
+
+
+
+
+
+                <!-- Détails des articles -->
+                <div class="articleDetails" id="articleDetails1">
+                    <a class="croix" onclick="remove(1)"><img src="ressources/main/cross.png"  class="icroix"></a>
+                    <div class="subArticleDetails"> 
+                        <div class="articleDetailsTitle txtCenter"> La Brûlerie de Meaux face au industriel </div>
+                        <div class="auteurA articleDetailsHeader">Auteur : Jérémie PARANT</div>
+                        <video controls class="articleDetailsVideo" src="ressources/bar/P15.MOV"></video>
+                        <div class="articleDetailsTxt txtCenter">
+                            La Brûlerie de Meaux nous a offert son savoir-faire, et les secrets derrière le goût de leurs cafés.<br> <br>
+                            Leur secret est un respect de l’origine, la provenance du café. En effet, ils proposent de nombreuses gammes, venant du monde entier, dont la source est connue. Ce respect permet de mettre en avant de nombreuses saveurs tout aussi uniques les unes que les autres. Durant notre interview, nous avons pu faire l’expérience des différentes odeurs de chacune de leurs graines, ainsi que du goût de leurs cafés.<br><br>
+                            En comparaison, les industriels ne respectent pas les graines de café et leurs provenances. Effectivement, ils mélangent d'énormes quantités de café de provenance différente, stocké dans d'énormes citernes. Ensuite, lors du processus de torréfaction, les grains sont chauffés à des températures extrêmes, sur de courte durée, carbonisant ainsi le café, le faisant perdre le goût particulier de chacune des graines. Ensuite il les plonge parfois dans de l’eau pour les faire refroidir et récupérer le poids perdu lors de la torréfaction, faisant perdre 60% de son arôme aux graines. De plus, les aliments ainsi grillés peuvent avoir des effets négatifs sur la santé.<br><br>
+                            Tandis que nos experts de Meaux ne se contentent pas uniquement de respecter la provenance pour permettre d’obtenir de tels goûts. Ils effectuent un processus de torréfaction qui respecte plus le matériau d’origine, avec des températures plus faibles, sur de plus longue durée. Il priorise ainsi la qualité à la quantité. <br> <br>
+                            De plus, ils effectuent différents mélanges, mettant en avant des saveurs propres à leurs cafés, notamment avec le “le nom du café”, leur café signature. <br> <br>
+                            Le café ne fait pas tout, La Brûlerie de Meaux dégage aussi une certaine atmosphère nostalgique des années 70, dont les nombreuses odeurs nous emmènent vers un nouveau monde gustatif. De vieux tableaux, des couleurs marronnées, des bocaux de café, des boîtes en métal, des branches de cafés, et un nuage d’odeurs, c’est la Brûlerie de Meaux
+                        </div>
+                        <div class="flexRow fCenter otherArticle">
+                            <div class="article" onclick="appearInstant(2)">
+                                <img class="articleImage" src="ressources/main/teste1.jpg" alt="">
+                                <div class="txtInScroll txtInArticle">À la Découverte du Café Signature de la Brûlerie : l’Italian</div>
+                            </div>
+                            <div class="article" onclick="appearInstant(3)">
+                                <img class="articleImage" src="ressources/article/article3.jpeg" alt="">
+                                <div class="txtInScroll txtInArticle">La Frontière entre Plaisir et Risques</div>
+                            </div>
+                            <div class="article" onclick="appearInstant(4)">
+                                <img class="articleImage" src="ressources/main/teste3.jpg" alt="">
+                                <div class="txtInScroll txtInArticle">Article 4</div>
+                            </div>
+                        </div>
+                        <div class="closeBtn" onclick="remove(1)"> Fermer </div>
+                    </div>
+                </div>
+
+                <div class="articleDetails" id="articleDetails2">
+                    <a class="croix" onclick="remove(2)"><img src="ressources/main/cross.png"  class="icroix"></a>
+                    <div class="subArticleDetails"> 
+                        <div class="articleDetailsTitle txtCenter">  À la Découverte du Café Signature de la Brûlerie : l’Italian </div>
+                        <div class="auteurA articleDetailsHeader">Auteur : Hugo BAJOUE</div>
+                        <div class="articleDetailsHeader txtCenter headerTooBig"> Dans la ville de Meaux, nichée au cœur de la région française, se trouve un véritable joyau pour les amateurs de café : "La Brûlerie de Meaux". Cet établissement unique, ouvert il y a 43 ans, a su conquérir les cœurs et le palais des habitants et visiteurs grâce à la manière dont Frédéric DelaRose, le propriétaire, a su nous faire découvrir son univers.
+                        </div>
+                        <video controls class="articleDetailsVideo" src="ressources/bar/P15.MOV"></video>
+                        <div class="articleDetailsTxt txtCenter">
+                            Dans le monde du café, chaque lieu a son histoire à raconter, un univers à faire partager et des expériences à faire découvrir. La Brûlerie de Meaux crée une expérience sensorielle unique en offrant non seulement une boisson chaude revigorante, mais aussi une immersion dans l'art et la passion du café. Aujourd’hui, cet établissement a voulu nous faire partager les différents cafés qu’il propose et nous parler des origines de son café signature. Laissez-nous donc vous emmener à la découverte de ce lieu exceptionnel, où chaque tasse raconte une histoire. <br><br>
+                            Chacune d’entre elles est préparée avec minutie, que ce soit par une infusion lente ou une extraction à la limite de la perfection. Chaque café dévoile dès la première gorgée un mariage harmonieux de saveurs, capturant l'essence même de l'engagement de l'établissement qui est de proposer un café de qualité supérieure. <br><br>
+                            C’est précisément ce que l’on retrouve dans le café signature de La Brûlerie de Meaux, l’Italian, qui se distingue par son équilibre exquis et ses profils de saveurs complexes. “C’est le calumet de la paix qui ponctue un repas réussi !”, nous dit Frédéric DelaRose, il s’agit d’un café issu de l’assemblage délicat et précis de grains de café d'origine éthiopienne, colombienne et brésilienne, qui lui ont permis d’arriver à un tel résultat.  <br><br>
+                            Cependant cet assemblage de saveur n’a pas été de tout repos, “Il nous fallait un café regroupant toutes les attentes qu'il pouvait susciter”, nous dit M.Delarose. Il a donc fallu faire plusieurs test avec différents client afin de trouver la recette parfaite : “Trop amer”, “Trop acide”, “Pas assez noir”, “Avec sucre”, “Sans sucre”, etc. A force de tout le temps modifier la recette et de ne jamais satisfaire tout le monde, Frédéric a décidé de recommencer simplement à ce que lui appréciait dans ce café et n’a plus jamais changé la recette. Force, mais pas trop. Parfums, mais pas flotteux. Long en bouche, mais pas arrache-cœur. Sans amertume, mais pas acide. Ainsi est né, il y a 40 ans, le goût italien du café signature de la Brûlerie de Meaux. <br><br>
+                        </div>
+                        <div class="flexRow fCenter otherArticle">
+                            <div class="article" onclick="appearInstant(1)">
+                                <img class="articleImage" src="ressources/main/testeCafe.jpg" alt="">
+                                <div class="txtInScroll txtInArticle">La Brûlerie de Meaux face au industriel</div>
+                            </div>
+                            <div class="article" onclick="appearInstant(3)">
+                                <img class="articleImage" src="ressources/article/article3.jpeg" alt="">
+                                <div class="txtInScroll txtInArticle">La Frontière entre Plaisir et Risques</div>
+                            </div>
+                            <div class="article" onclick="appearInstant(4)">
+                                <img class="articleImage" src="ressources/main/teste3.jpg" alt="">
+                                <div class="txtInScroll txtInArticle">Article 4</div>
+                            </div>
+                        </div>
+                        <div class="closeBtn" onclick="remove(2)"> Fermer </div>
+                    </div>
+                </div>
+
+                <div class="articleDetails" id="articleDetails3">
+                    <a class="croix" onclick="remove(3)"><img src="ressources/main/cross.png"  class="icroix"></a>
+                    <div class="subArticleDetails"> 
+                        <div class="articleDetailsTitle txtCenter"> La Frontière entre Plaisir et Risques</div>
+                        <div class="auteurA articleDetailsHeader">Auteur : Morgane LE NORMAND </div>
+                        <div class="articleDetailsHeader txtCenter headerTooBig"> Le café un débat qui fait parler,  “Au bout de combien de tasses, c’est dangereux pour mon corps ?” .</div>
+                        <img class="articleDetailsVideo boderRadius" src="ressources/article/article3.jpeg" alt="">
+                        <div class="articleDetailsTxt txtCenter">
+                            Il est courant de choisir le café comme moyen de lutter contre la lassitude matinale ou post-déjeuner, afin de retrouver notre énergie. Souvent, les passionnés de café s’interrogent sur la quantité de café qui peut être dangereuse pour notre santé. Cependant, il convient de noter que le café a un effet bénéfique sur l’esprit et le corps, dès les premières gorgées. Cela peut amplifier nos capacités cognitives et nous maintenir éveillé tout au long de la journée. <br><br>
+                            Bien que le café ait ses mérites, il n’est pas sans pièges et peut entraîner toute une série de problèmes physiques et cognitifs. Les experts suggèrent que consommer plus de quatre tasses de café, ce qui équivaut à environ 400 milligrammes, peut avoir des effets nocifs sur la santé. Cela peut se manifester par des dommages au système nerveux, provoquant insomnie et irritabilité. De plus, de nombreux chercheurs ont associé une consommation excessive de café à des maux de tête récurrents, mais aussi des problèmes digestifs. <br><br>
+                            De nombreuses personnes dans le monde deviennent dépendantes du café, communément appelé caféinoman. Phénomène répandu à l'échelle mondiale, il est important que le public prenne conscience des risques potentiels liés à la dépendance au café. De plus, une consommation responsable de cette boisson populaire devrait être encouragée. Le café, avec le thé et le maté, est l'une des boissons les plus consommées au monde, et les trois boissons contiennent de la caféine. Il est donc crucial de trouver un équilibre entre le plaisir d’une bonne tasse de café et la préservation de notre bien-être.
+                        </div>
+                        <div class="flexRow fCenter otherArticle">
+                            <div class="article" onclick="appearInstant(1)">
+                                <img class="articleImage" src="ressources/main/testeCafe.jpg" alt="">
+                                <div class="txtInScroll txtInArticle">La Brûlerie de Meaux face au industriel</div>
+                            </div>
+                            <div class="article" onclick="appearInstant(2)">
+                                <img class="articleImage" src="ressources/main/teste1.jpg" alt="">
+                                <div class="txtInScroll txtInArticle">À la Découverte du Café Signature de la Brûlerie : l’Italian</div>
+                            </div>
+                            <div class="article" onclick="appearInstant(4)">
+                                <img class="articleImage" src="ressources/main/teste3.jpg" alt="">
+                                <div class="txtInScroll txtInArticle txtInArticleDetails">Article 4</div>
+                            </div>
+                        </div>
+                        <div class="closeBtn" onclick="remove(3)"> Fermer </div>
+                    </div>
+                </div>
+
+                <div class="articleDetails" id="articleDetails4">
+                    <a class="croix" onclick="remove(4)"><img src="ressources/main/cross.png"  class="icroix"></a>
+                    <div class="subArticleDetails"> 
+                        <div class="articleDetailsTitle txtCenter"> TITRE DE L’ARTICLE 4</div>
+                        <div class="auteurA articleDetailsHeader">Auteur : Raphael CADETE</div>
+                        <div class="articleDetailsHeader txtCenter headerTooBig"> Qorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</div>
+                        <video controls class="articleDetailsVideo" src="ressources/bar/P15.MOV"></video>
+                        <div class="articleDetailsTxt txtCenter">
+                            Norem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. <br><br>
+                            Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in elementum tellus. <br><br>
+                            Curabitur tempor quis eros tempus lacinia. Nam bibendum pellentesque quam a convallis. Sed ut vulputate nisi. Integer in felis sed leo vestibulum venenatis. Suspendisse quis arcu sem. Aenean feugiat ex eu vestibulum vestibulum. Morbi a eleifend magna. Nam metus lacus, porttitor eu mauris a, blandit ultrices nibh. Mauris sit amet magna non ligula vestibulum eleifend. Nulla varius volutpat turpis sed lacinia. Nam <br><br>
+                            eget mi in purus lobortis eleifend. Sed nec ante dictum sem condimentum ullamcorper quis venenatis nisi. Proin vitae facilisis nisi, ac posuere leo.
+                        </div>
+                        <div class="flexRow fCenter otherArticle">
+                            <div class="article" onclick="appearInstant(1)">
+                                <img class="articleImage" src="ressources/main/testeCafe.jpg" alt="">
+                                <div class="txtInScroll txtInArticle">La Brûlerie de Meaux face au industriel</div>
+                            </div>
+                            <div class="article" onclick="appearInstant(2)">
+                                <img class="articleImage" src="ressources/main/teste1.jpg" alt="">
+                                <div class="txtInScroll txtInArticle">À la Découverte du Café Signature de la Brûlerie : l’Italian</div>
+                            </div>
+                            <div class="article" onclick="appearInstant(3)">
+                                <img class="articleImage" src="ressources/article/article3.jpeg" alt="">
+                                <div class="txtInScroll txtInArticle">La Frontière entre Plaisir et Risques</div>
+                            </div>
+                        </div>
+                        <div class="closeBtn" onclick="remove(4)"> Fermer </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+
+
+
+
+
+            <!-- Galerie Photo -->
+            <div class="moreInfo moreInfo1Line">
+                GALERIE PHOTO
+            </div>
+            <section class="gallery">
+                <div class="flexRow fCenter">
+                    <div class="flexColumn galleryColumn">
+                        <img class="gImg g16-9" src="ressources/gallery/the2.jpg" alt="" onclick="appearImgGalery('ressources/gallery/the2.jpg', false)">
+                        <img class="gImg g16-9" src="ressources/gallery/cacao.jpg" alt="" onclick="appearImgGalery('ressources/gallery/cacao.jpg', false)">
+                        <img class="gImg g9-16" src="ressources/gallery/cafes.jpg" alt="" onclick="appearImgGalery('ressources/gallery/cafes.jpg', true)">
+                        <img class="gImg g16-9" src="ressources/gallery/tasse.jpg" alt="" onclick="appearImgGalery('ressources/gallery/tasse.jpg', false)">
+                        <img class="gImg g9-16" src="ressources/gallery/cafes2.jpg" alt="" onclick="appearImgGalery('ressources/gallery/cafes2.jpg', true)">
+                    </div>
+                    <div class="flexColumn galleryColumn">
+                        <img class="gImg g16-9" src="ressources/gallery/the.jpg" alt="" onclick="appearImgGalery('ressources/gallery/the.jpg', false)">
+                        <img class="gImg g9-16" src="ressources/gallery/cafes3.jpg" alt="" onclick="appearImgGalery('ressources/gallery/cafes3.jpg', true)">
+                        <img class="gImg g16-9" src="ressources/gallery/machine (2).jpg" alt="" onclick="appearImgGalery('ressources/gallery/machine (2).jpg', false)">
+                        <img class="gImg g16-9" src="ressources/gallery/graineC.jpg" alt="" onclick="appearImgGalery('ressources/gallery/graineC.jpg', false)">
+                        <img class="gImg g16-9" src="ressources/gallery/graine.jpg" alt="" onclick="appearImgGalery('ressources/gallery/graine.jpg', false)">
+                        <img class="gImg g16-9" src="ressources/gallery/graine (2).jpg" alt="" onclick="appearImgGalery('ressources/gallery/graine (2).jpg', false)">
+                    </div>
+                    <div class="flexColumn galleryColumn">
+                        <img class="gImg g16-9" src="ressources/gallery/the3.jpg" alt="" onclick="appearImgGalery('ressources/gallery/the3.jpg', false)">
+                        <img class="gImg g16-9" src="ressources/gallery/lum.jpg" alt="" onclick="appearImgGalery('ressources/gallery/lum.jpg', false)">
+                        <img class="gImg g16-9" src="ressources/gallery/caisse.jpg" alt="" onclick="appearImgGalery('ressources/gallery/caisse.jpg', false)">
+                        <img class="gImg g9-16" src="ressources/gallery/cafes4.jpg" alt="" onclick="appearImgGalery('ressources/gallery/cafes4.jpg', true)">
+                        <img class="gImg g16-9" src="ressources/gallery/sac2.jpg" alt="" onclick="appearImgGalery('ressources/gallery/sac2.jpg', false)">
+                        <img class="gImg g16-9" src="ressources/gallery/sac.jpg" alt="" onclick="appearImgGalery('ressources/gallery/sac.jpg', false)">
+                    </div>
+                </div>
+
+                <div id="bigGallery">
+                    <div id="galleryContent">
+                        <img id="bigGalleryImg" src="ressources/gallery/cacao.jpg" alt="">
+                    </div>
+                </div>
+                <a id="galleryCroix" class="croix" onclick="removeGalery()"><img src="ressources/main/crossWhite.png"  class="icroix"></a>
+                <div id="backgroundCover"></div>
+            </section>
+
+
+
+
+
+            <!-- Footer -->
+            <footer class="flexRow footerTxtSize fSpaceBetween">
+                <div class="auteur">
+                    <b class='footerSubTitle'>Auteur :</b><br>
+                    <b> Jérémie : </b> jeremie.parant@edu.univ-eiffel.fr <br>
+                    <b> Morgane : </b> morgane.le-normand@edu.univ-eiffel.fr <br>
+                    <b> Hugo : </b> hugo.bajoue@edu.univ-eiffel.fr <br>
+                    <b> Raphäel : </b> raphäel.cadete@edu.univ-eiffel.fr
+                </div>
+                <div class="footerImgBox">
+                    <img class="footerImg" src="ressources/main/titre.png" alt="">
+                </div>
+                <div class="realise">Réalisé le xx/11/2023</div>
+            </footer>
             <script src="script.js"></script>
-            <script src="Jeremie.js"></script>
-            <script>addHTML("secondContent", "Jeremie.html")</script>
         </section>
     </body>
 </html>
