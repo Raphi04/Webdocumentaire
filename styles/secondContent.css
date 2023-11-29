@@ -445,7 +445,6 @@
 
 /* Footer */
 footer {
-    border-top: 2px solid rgb(184, 184, 184);
     padding: 25px;
     background-color: #1F1D19;
     color: white;
@@ -641,6 +640,55 @@ right: 20px;
         .icroix{
             width: 28px;
         }
+
+
+
+
+    /* Gallery */
+.gallery {
+    padding: 56px 0 56px 0;
+}
+
+.galleryColumn {
+    margin: 0 28px 0 28px;
+    width: 420px;
+}
+
+.g16-9 {
+    width: 425px;
+    height: 239px;
+    margin: 28px 0 28px 0;
+}
+
+.g9-16 {
+    width: 425px;
+    height: 548px;
+    margin-bottom: 28px;
+    margin-top: 28px;
+}
+
+.gImg {
+    border: 7px solid #1F1D19;
+    border-radius: 14px;
+}
+
+
+
+
+
+    /* Gallery zoom */
+
+    .bigGallery9-16 {
+        width: 416px !important;
+        height: 739px !important;
+    }
+
+    #bigGalleryImg {
+        border: 11px solid #1F1D19;
+        border-radius: 14px;
+    }
+
+
 
 
 
