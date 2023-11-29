@@ -324,7 +324,10 @@ function bodyStop() {
     document.getElementById("body").classList.add('body');
 }
 
-
+function stopVideo(videoID) {
+    video = document.getElementById(videoID);
+    video.pause();
+}
 
 
 

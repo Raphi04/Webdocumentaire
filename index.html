@@ -350,11 +350,11 @@
 
                 <!-- Détails des articles -->
                 <div class="articleDetails" id="articleDetails1">
-                    <a class="croix" onclick="remove(1)"><img src="ressources/main/cross.png"  class="icroix"></a>
+                    <a class="croix" onclick="remove(1), stopVideo('video1')"><img src="ressources/main/cross.png"  class="icroix"></a>
                     <div class="subArticleDetails"> 
                         <div class="articleDetailsTitle txtCenter"> La Brûlerie de Meaux face au industriel </div>
                         <div class="auteurA articleDetailsHeader">Auteur : Jérémie PARANT</div>
-                        <video controls class="articleDetailsVideo" src="ressources/main/Vidéo 4 (Valorisation du café).mp4"></video>
+                        <video controls id="video1" class="articleDetailsVideo" src="ressources/main/Vidéo 4 (Valorisation du café).mp4"></video>
                         <div class="articleDetailsTxt txtCenter">
                             La Brûlerie de Meaux nous a fait découvrir son savoir-faire, ainsi que le secret derrière son goût si authentique.<br> <br>
                             Leur secret réside dans le respect de l’origine et de la provenance du café. En effet, ils proposent de nombreuses gammes, venant du monde entier, dont la source est connue. Ce respect permet de mettre en valeur de nombreuses saveurs tout aussi uniques les unes que les autres. Durant notre interview, nous avons pu faire l’expérience des différentes odeurs de chacune de leurs graines, ainsi que du goût de leurs cafés.<br><br>
@@ -377,18 +377,18 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="closeBtn" onclick="remove(1)"> Fermer </div>
+                        <div class="closeBtn" onclick="remove(1), stopVideo('video1')"> Fermer </div>
                     </div>
                 </div>
 
                 <div class="articleDetails" id="articleDetails2">
-                    <a class="croix" onclick="remove(2)"><img src="ressources/main/cross.png"  class="icroix"></a>
+                    <a class="croix" onclick="remove(2), stopVideo('video2')"><img src="ressources/main/cross.png"  class="icroix"></a>
                     <div class="subArticleDetails"> 
                         <div class="articleDetailsTitle txtCenter">  À la Découverte du Café Signature de la Brûlerie : l’Italian </div>
                         <div class="auteurA articleDetailsHeader">Auteur : Hugo BAJOUE</div>
                         <div class="articleDetailsHeader txtCenter headerTooBig"> Dans la ville de Meaux, nichée au cœur de la région française, se trouve un véritable joyau pour les amateurs de café : "La Brûlerie de Meaux". Cet établissement unique, ouvert il y a 43 ans, a su conquérir les cœurs et le palais des habitants et visiteurs grâce à la manière dont Frédéric DelaRose, le propriétaire, a su nous faire découvrir son univers.
                         </div>
-                        <video controls class="articleDetailsVideo" src="ressources/main/Vidéo 2 (Café Signature).mp4"></video>
+                        <video controls id="video2" class="articleDetailsVideo" src="ressources/main/Vidéo 2 (Café Signature).mp4"></video>
                         <div class="articleDetailsTxt txtCenter">
                             Dans le monde du café, chaque lieu a son histoire à raconter, un univers à faire partager et des expériences à faire découvrir. La Brûlerie de Meaux crée une expérience sensorielle unique en offrant non seulement une boisson chaude revigorante, mais aussi une immersion dans l'art et la passion du café. Aujourd’hui, cet établissement a voulu nous faire partager les différents cafés qu’il propose et nous parler des origines de son café signature. Laissez-nous donc vous emmener à la découverte de ce lieu exceptionnel, où chaque tasse raconte une histoire. <br><br>
                             Chacune d’entre elles est préparée avec minutie, que ce soit par une infusion lente ou une extraction à la limite de la perfection. Chaque café dévoile dès la première gorgée un mariage harmonieux de saveurs, capturant l'essence même de l'engagement de l'établissement qui est de proposer un café de qualité supérieure. <br><br>
@@ -410,7 +410,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="closeBtn" onclick="remove(2)"> Fermer </div>
+                        <div class="closeBtn" onclick="remove(2), stopVideo('video2')"> Fermer </div>
                     </div>
                 </div>
 
