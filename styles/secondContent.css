@@ -95,25 +95,26 @@
 
 .arrow {
     position: absolute;
-    height: 27px;
-    width: 133px;
+    width: 15%;
     top: 50%;
     transition-duration: 200ms;
     cursor: pointer;
 }
 
 .arrow:hover {
-    scale: 1.15;
+    transform: translate(0, -50%) scale(1.15) !important;
 }
 
 #arrowLeft {
     right: 0;
-    transform: translate(0, -50%) rotate(90deg);
+    transform: translate(0, -50%);
+    margin-right: 50px;
 }
 
 #arrowRight {
     left: 0;
-    transform: translate(0, -50%) rotate(-90deg);
+    transform: translate(0, -50%);
+    margin-left: 50px;
 }
 
 .velourBackground {
