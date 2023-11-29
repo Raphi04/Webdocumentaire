@@ -104,6 +104,7 @@ function wichWindow(window) {
 
         case "sousSol" :
             navigation[3].classList.add("selected");
+            stopAllMusic("true");
             if (jazzMusic.currentTime > 0){
                 jazzMusicEtouffe.currentTime = jazzMusic.currentTime;
                 jazzMusic.currentTime = 0;
@@ -122,6 +123,7 @@ function wichWindow(window) {
 
         case "bar" :
             navigation[4].classList.add("selected");
+            stopAllMusic("true");
             if (jazzMusicEtouffe.currentTime > 0){
                 jazzMusic.currentTime = jazzMusicEtouffe.currentTime;
                 jazzMusicEtouffe.currentTime = 0;

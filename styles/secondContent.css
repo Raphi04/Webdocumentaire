@@ -349,7 +349,8 @@
 
 /* Gallery */
 .gallery {
-    background-image: url("../ressources/main/boisClair.png");
+    background-image: url("../ressources/main/test250.jpg");
+    background-size: cover;
     padding: 40px 0 40px 0;
 }
 
