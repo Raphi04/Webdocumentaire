@@ -184,8 +184,7 @@ p{
 
 #goDownContainer > div > img:hover {
     cursor: pointer;
-    width: 6%;
-    height: 30.5%;
+    transform: translate(-50%, -50%) scale(1.2);
 }
 
 #goDownContainer > div {
