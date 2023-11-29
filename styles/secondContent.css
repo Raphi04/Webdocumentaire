@@ -349,27 +349,27 @@
 
 /* Gallery */
 .gallery {
-    background-image: url("../ressources/main/test250.jpg");
-    background-size: cover;
+    background-image: url("../ressources/main/boisClair.png");
     padding: 40px 0 40px 0;
 }
 
 .galleryColumn {
-    margin: 0 20px 0 20px;
-    width: 300px;
+    margin: 0 35px 0 35px;
+    width: 336px;
     position: relative;
     justify-content: center;
 }
 
 .g16-9 {
-    width: 304px;
-    height: 171px;
-    margin: 20px 0 20px 0;
+    width: 336px;
+    height: 189px;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .g9-16 {
-    width: 304px;
-    height: 392px;
+    width: 336px;
+    height: 428px;
     object-fit: cover;
     margin: auto;
     margin-bottom: 20px;
@@ -651,19 +651,20 @@ right: 20px;
 }
 
 .galleryColumn {
-    margin: 0 28px 0 28px;
-    width: 420px;
+    margin: 0 35px 0 35px;
+    width: 464px;
 }
 
 .g16-9 {
-    width: 425px;
-    height: 239px;
-    margin: 28px 0 28px 0;
+    width: 464px;
+    height: 261px;
+    margin-bottom: 28px;
+    margin-top: 28px;
 }
 
 .g9-16 {
-    width: 425px;
-    height: 548px;
+    width: 464px;
+    height: 592px;
     margin-bottom: 28px;
     margin-top: 28px;
 }
